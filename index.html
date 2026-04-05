@@ -1,629 +1,845 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creamer Family European Adventure</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#1B2A4A;--blue:#2E5090;--light-blue:#D6E4F0;
-  --paris:#2E5090;--paris-light:#EBF0F7;--paris-accent:#4A7AB5;
-  --belgium:#D4820A;--belgium-light:#FFF3E0;--belgium-accent:#F5A623;
-  --london:#C62828;--london-light:#FFEBEE;--london-accent:#E57373;
-  --travel:#455A64;--travel-light:#ECEFF1;--travel-accent:#78909C;
-  --bg:#FAFBFD;--card:#FFFFFF;--text:#1A1A1A;--text-light:#5A6370;
-  --border:#E2E8F0;
-  --shadow:0 2px 12px rgba(0,0,0,.06);
-  --shadow-lg:0 8px 32px rgba(0,0,0,.10);
-  --radius:16px;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.72}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creamer Family European Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ========== HERO ========== -->
+    <header class="hero">
+      <h1>The Creamer Family European Adventure</h1>
+      <p class="subtitle">
+        13 Days · 3 Countries · 4 Creamers · Countless Playgrounds
+      </p>
+      <div class="route">
+        <span class="badge">✈ Nashville</span>
+        <span class="arrow">→</span>
+        <span class="badge">🇫🇷 Paris</span>
+        <span class="arrow">→</span>
+        <span class="badge">🇧🇪 Belgium</span>
+        <span class="arrow">→</span>
+        <span class="badge">🇬🇧 London</span>
+        <span class="arrow">→</span>
+        <span class="badge">✈ Nashville</span>
+      </div>
+    </header>
 
-/* ── HERO ───────────────────────────── */
-.hero{
-  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 50%,var(--paris-accent) 100%);
-  color:#fff;padding:90px 24px 64px;text-align:center;position:relative;overflow:hidden;
-}
-.hero::before{content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-}
-.hero *{position:relative}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:800;margin-bottom:10px;letter-spacing:-.5px}
-.hero .subtitle{font-size:1.15em;font-weight:300;opacity:.9;max-width:600px;margin:0 auto 32px}
-.route{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px}
-.route .badge{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:25px;padding:8px 20px;font-size:.88em;font-weight:500}
-.route .arrow{opacity:.5;font-size:1.1em}
+    <!-- ========== NAV ========== -->
+    <nav class="sticky-nav">
+      <ul>
+        <li><a href="#paris">Paris</a></li>
+        <li><a href="#disney">Disney</a></li>
+        <li><a href="#belgium">Belgium</a></li>
+        <li><a href="#london">London</a></li>
+        <li><a href="#booking">Booking Strategy</a></li>
+        <li><a href="#budget">Budget</a></li>
+      </ul>
+    </nav>
 
-/* ── STICKY NAV ─────────────────────── */
-.sticky-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
-.sticky-nav ul{list-style:none;display:flex;max-width:960px;margin:0 auto;padding:0 16px}
-.sticky-nav a{display:block;padding:14px 16px;text-decoration:none;font-size:.82em;font-weight:600;color:var(--text-light);white-space:nowrap;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
-.sticky-nav a:hover,.sticky-nav a.active{color:var(--blue);border-bottom-color:var(--blue)}
-
-/* ── LAYOUT ─────────────────────────── */
-.container{max-width:900px;margin:0 auto;padding:0 24px}
-
-/* ── SECTION HERO IMAGES ────────────── */
-.section-hero{width:100%;border-radius:var(--radius);overflow:hidden;margin:28px 0 8px;box-shadow:var(--shadow);position:relative}
-.section-hero img{width:100%;height:380px;object-fit:cover;display:block;transition:transform .6s ease}
-.section-hero:hover img{transform:scale(1.03)}
-.section-hero .img-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;padding:40px 20px 14px;font-size:.82em;font-weight:500}
-
-/* ── SECTION TITLES ─────────────────── */
-.section-title{font-family:'Playfair Display',serif;font-size:1.9em;color:var(--navy);margin:56px 0 8px;scroll-margin-top:64px}
-.section-subtitle{color:var(--text-light);font-size:.95em;margin-bottom:24px}
-
-/* ── DAY CARDS ──────────────────────── */
-.day-card{background:var(--card);border-radius:var(--radius);margin-bottom:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
-.day-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.day-header{padding:16px 24px;color:#fff;display:flex;justify-content:space-between;align-items:center}
-.day-header.paris{background:linear-gradient(135deg,var(--paris),var(--paris-accent))}
-.day-header.belgium{background:linear-gradient(135deg,#B86E00,var(--belgium))}
-.day-header.london{background:linear-gradient(135deg,#A01F1F,var(--london))}
-.day-header.travel{background:linear-gradient(135deg,#37474F,var(--travel))}
-.day-header h3{font-family:'Playfair Display',serif;font-size:1.15em;font-weight:700}
-.day-header .day-tag{font-size:.78em;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-weight:500}
-.day-body{padding:24px}
-.day-body h4{font-size:.92em;font-weight:700;color:var(--navy);margin:18px 0 6px;text-transform:uppercase;letter-spacing:.5px}
-.day-body h4:first-child{margin-top:0}
-.day-body p,.day-body li{font-size:.93em;color:#374151}
-.day-body ul{padding-left:20px;margin:6px 0 12px}
-.day-body li{margin-bottom:4px}
-.playground{background:#F0FFF4;border-left:4px solid #38A169;border-radius:0 10px 10px 0;padding:12px 16px;margin:12px 0;font-size:.9em}
-.playground .pg-title{font-weight:700;color:#276749;margin-bottom:2px}
-.tip{background:#FFFBEB;border-left:4px solid #D69E2E;border-radius:0 10px 10px 0;padding:12px 16px;margin:12px 0;font-size:.9em}
-.tip .tip-title{font-weight:700;color:#975A16;margin-bottom:2px}
-.transit{background:#EBF8FF;border-left:4px solid #3182CE;border-radius:0 10px 10px 0;padding:12px 16px;margin:12px 0;font-size:.9em}
-.transit .transit-title{font-weight:700;color:#2A4365;margin-bottom:2px}
-
-/* ── BOOKING STRATEGY ───────────────── */
-.strategy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:20px 0}
-.strategy-card{background:var(--card);border-radius:var(--radius);padding:24px;border:1px solid var(--border);box-shadow:var(--shadow)}
-.strategy-card h4{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:8px;font-size:1.1em}
-.strategy-card p{font-size:.88em;color:var(--text-light)}
-.strategy-card .when{font-size:.82em;font-weight:600;color:var(--blue);margin-top:10px;display:inline-block;background:var(--paris-light);padding:4px 12px;border-radius:20px}
-
-/* ── BUDGET TABLE ───────────────────── */
-.budget-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88em}
-.budget-table th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-weight:600}
-.budget-table td{padding:10px 16px;border-bottom:1px solid var(--border)}
-.budget-table tr:nth-child(even){background:#F8FAFC}
-.budget-table .total{font-weight:700;background:var(--paris-light)!important}
-
-/* ── FOOTER ─────────────────────────── */
-footer{background:var(--navy);color:rgba(255,255,255,.7);text-align:center;padding:40px 24px;margin-top:60px;font-size:.85em}
-footer .hearts{font-size:1.4em;margin-bottom:8px}
-
-/* ── RESPONSIVE ─────────────────────── */
-@media(max-width:640px){
-  .hero{padding:60px 16px 40px}
-  .hero h1{font-size:1.8em}
-  .section-hero img{height:220px}
-  .day-header{flex-direction:column;align-items:flex-start;gap:6px}
-  .day-body{padding:18px}
-  .container{padding:0 16px}
-  .strategy-grid{grid-template-columns:1fr}
-}
-</style>
-</head>
-<body>
-
-<!-- ========== HERO ========== -->
-<header class="hero">
-  <h1>The Creamer Family European Adventure</h1>
-  <p class="subtitle">13 Days · 3 Countries · 4 Creamers · Countless Playgrounds</p>
-  <div class="route">
-    <span class="badge">✈ Nashville</span>
-    <span class="arrow">→</span>
-    <span class="badge">🇫🇷 Paris</span>
-    <span class="arrow">→</span>
-    <span class="badge">🇧🇪 Belgium</span>
-    <span class="arrow">→</span>
-    <span class="badge">🇬🇧 London</span>
-    <span class="arrow">→</span>
-    <span class="badge">✈ Nashville</span>
-  </div>
-</header>
-
-<!-- ========== NAV ========== -->
-<nav class="sticky-nav">
-  <ul>
-    <li><a href="#paris">Paris</a></li>
-    <li><a href="#disney">Disney</a></li>
-    <li><a href="#belgium">Belgium</a></li>
-    <li><a href="#london">London</a></li>
-    <li><a href="#booking">Booking Strategy</a></li>
-    <li><a href="#budget">Budget</a></li>
-  </ul>
-</nav>
-
-<main class="container">
-
-<!-- ═══════════════════════════════════
+    <main class="container">
+      <!-- ═══════════════════════════════════
      PARIS — DAYS 1-3
      ═══════════════════════════════════ -->
-<h2 class="section-title" id="paris">🇫🇷 Paris</h2>
-<p class="section-subtitle">5 Nights · 1st / 2nd / 3rd Arrondissement · 2-Bedroom Airbnb</p>
+      <h2 class="section-title" id="paris">🇫🇷 Paris</h2>
+      <p class="section-subtitle">
+        5 Nights · 1st / 2nd / 3rd Arrondissement · 2-Bedroom Airbnb
+      </p>
 
-<div class="section-hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Paris_sacre_coeur_panorama.jpg/1920px-Paris_sacre_coeur_panorama.jpg" alt="Panoramic view of Paris from Sacre-Coeur" loading="lazy">
-  <div class="img-caption">View from Sacré-Cœur — Photo: Wikimedia Commons</div>
-</div>
+      <div class="section-hero">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Paris_sacre_coeur_panorama.jpg/1920px-Paris_sacre_coeur_panorama.jpg"
+          alt="Panoramic view of Paris from Sacre-Coeur"
+          loading="lazy"
+        />
+        <div class="img-caption">
+          View from Sacré-Cœur — Photo: Wikimedia Commons
+        </div>
+      </div>
 
-<!-- Day 1 -->
-<div class="day-card">
-  <div class="day-header paris">
-    <h3>Day 1 — Arrival in Paris</h3>
-    <span class="day-tag">Travel + Settle In</span>
-  </div>
-  <div class="day-body">
-    <h4>Getting There</h4>
-    <p>Overnight flight from Nashville (BNA) to Paris Charles de Gaulle (CDG). Arrive in the morning and ease into the city.</p>
-    <div class="transit">
-      <div class="transit-title">🚆 RER B → Châtelet-Les Halles</div>
-      ~35 minutes, ~€11.50/adult. Children under 10 ride half fare. Buy tickets at the station or use the Île-de-France Mobilités app.
-    </div>
-    <h4>Afternoon</h4>
-    <ul>
-      <li>Check into your Airbnb, drop bags, and take a deep breath — you're in Paris!</li>
-      <li>Grab croissants and café crème at a nearby boulangerie</li>
-      <li>Stock up on basics at Franprix or Monoprix for breakfasts and snacks</li>
-      <li>Explore your neighborhood on foot — the Montorgueil area (2nd arr.) is perfect for this</li>
-    </ul>
-    <div class="playground">
-      <div class="pg-title">🛝 Jardin Nelson Mandela at Les Halles</div>
-      Trampolines, tube slides, fully fenced. Perfect for burning off plane energy while the adults sip coffee nearby.
-    </div>
-    <h4>Evening</h4>
-    <p>Early dinner at a neighborhood bistro — the girls will be fading from jet lag, and that's okay. Grab glaces (ice cream) on the walk home.</p>
-  </div>
-</div>
+      <!-- Day 1 -->
+      <div class="day-card">
+        <div class="day-header paris">
+          <h3>Day 1 — Arrival in Paris</h3>
+          <span class="day-tag">Travel + Settle In</span>
+        </div>
+        <div class="day-body">
+          <h4>Getting There</h4>
+          <p>
+            Overnight flight from Nashville (BNA) to Paris Charles de Gaulle
+            (CDG). Arrive in the morning and ease into the city.
+          </p>
+          <div class="transit">
+            <div class="transit-title">🚆 RER B → Châtelet-Les Halles</div>
+            ~35 minutes, ~€11.50/adult. Children under 10 ride half fare. Buy
+            tickets at the station or use the Île-de-France Mobilités app.
+          </div>
+          <h4>Afternoon</h4>
+          <ul>
+            <li>
+              Check into your Airbnb, drop bags, and take a deep breath — you're
+              in Paris!
+            </li>
+            <li>Grab croissants and café crème at a nearby boulangerie</li>
+            <li>
+              Stock up on basics at Franprix or Monoprix for breakfasts and
+              snacks
+            </li>
+            <li>
+              Explore your neighborhood on foot — the Montorgueil area (2nd
+              arr.) is perfect for this
+            </li>
+          </ul>
+          <div class="playground">
+            <div class="pg-title">🛝 Jardin Nelson Mandela at Les Halles</div>
+            Trampolines, tube slides, fully fenced. Perfect for burning off
+            plane energy while the adults sip coffee nearby.
+          </div>
+          <h4>Evening</h4>
+          <p>
+            Early dinner at a neighborhood bistro — the girls will be fading
+            from jet lag, and that's okay. Grab glaces (ice cream) on the walk
+            home.
+          </p>
+        </div>
+      </div>
 
-<!-- Day 2 -->
-<div class="day-card">
-  <div class="day-header paris">
-    <h3>Day 2 — The Classics, Reimagined</h3>
-    <span class="day-tag">Tuileries · Notre-Dame · Luxembourg</span>
-  </div>
-  <div class="day-body">
-    <h4>Morning</h4>
-    <ul>
-      <li>Walk to <strong>Tuileries Garden</strong> — one of the world's most beautiful urban parks</li>
-      <li>Hit the Tuileries playground: trampolines, slides, and a classic carousel</li>
-      <li>Stroll along the Seine toward Île de la Cité</li>
-    </ul>
-    <h4>Midday</h4>
-    <ul>
-      <li><strong>Notre-Dame Cathedral</strong> exterior — see the restoration progress up close</li>
-      <li>Browse the flower market on Île de la Cité</li>
-      <li>Lunch: Crêpes near Saint-Michel (the girls will love picking fillings)</li>
-    </ul>
-    <h4>Afternoon</h4>
-    <div class="playground">
-      <div class="pg-title">🛝 Luxembourg Gardens — Le Ludo Jardin</div>
-      This is a highlight. Zipline, climbing structures, sandbox, and a puppet theater (Théâtre du Luxembourg). Rent toy sailboats to push across the pond (~€5). Playground entry ~€3/child.
-    </div>
-    <h4>Evening</h4>
-    <p>Wander the streets of <strong>Saint-Germain-des-Prés</strong> — grab dinner at a local café with terrace seating.</p>
-  </div>
-</div>
+      <!-- Day 2 -->
+      <div class="day-card">
+        <div class="day-header paris">
+          <h3>Day 2 — The Classics, Reimagined</h3>
+          <span class="day-tag">Tuileries · Notre-Dame · Luxembourg</span>
+        </div>
+        <div class="day-body">
+          <h4>Morning</h4>
+          <ul>
+            <li>
+              Walk to <strong>Tuileries Garden</strong> — one of the world's
+              most beautiful urban parks
+            </li>
+            <li>
+              Hit the Tuileries playground: trampolines, slides, and a classic
+              carousel
+            </li>
+            <li>Stroll along the Seine toward Île de la Cité</li>
+          </ul>
+          <h4>Midday</h4>
+          <ul>
+            <li>
+              <strong>Notre-Dame Cathedral</strong> exterior — see the
+              restoration progress up close
+            </li>
+            <li>Browse the flower market on Île de la Cité</li>
+            <li>
+              Lunch: Crêpes near Saint-Michel (the girls will love picking
+              fillings)
+            </li>
+          </ul>
+          <h4>Afternoon</h4>
+          <div class="playground">
+            <div class="pg-title">🛝 Luxembourg Gardens — Le Ludo Jardin</div>
+            This is a highlight. Zipline, climbing structures, sandbox, and a
+            puppet theater (Théâtre du Luxembourg). Rent toy sailboats to push
+            across the pond (~€5). Playground entry ~€3/child.
+          </div>
+          <h4>Evening</h4>
+          <p>
+            Wander the streets of <strong>Saint-Germain-des-Prés</strong> — grab
+            dinner at a local café with terrace seating.
+          </p>
+        </div>
+      </div>
 
-<!-- Day 3 -->
-<div class="day-card">
-  <div class="day-header paris">
-    <h3>Day 3 — Montmartre & Local Life</h3>
-    <span class="day-tag">Sacré-Cœur · Buttes-Chaumont · Canal Saint-Martin</span>
-  </div>
-  <div class="day-body">
-    <h4>Morning</h4>
-    <ul>
-      <li>Métro to <strong>Montmartre</strong> — take the stairs up (more fun than the funicular!)</li>
-      <li><strong>Sacré-Cœur Basilica</strong> — the views from the steps are breathtaking</li>
-      <li>Artists' quarter at <strong>Place du Tertre</strong> — maybe get a family caricature?</li>
-      <li>The <strong>"I Love You" wall</strong> at Abbesses — "I love you" in 250 languages</li>
-    </ul>
-    <h4>Lunch</h4>
-    <p>Café terrace in Montmartre — croque monsieur, french onion soup, and citron pressé for the girls.</p>
-    <h4>Afternoon — Choose Your Own Adventure</h4>
-    <div class="playground">
-      <div class="pg-title">🛝 Option A: Parc des Buttes-Chaumont</div>
-      Paris's wildest park. Caves, a waterfall, a temple on a cliff over a lake, and an adventure playground. The girls will think it's an enchanted forest.
-    </div>
-    <div class="playground">
-      <div class="pg-title">🛝 Option B: Champ de Mars Playground</div>
-      Right under the Eiffel Tower. Great playground with tower views. Perfect if you want to see the tower without doing the tourist queue.
-    </div>
-    <h4>Evening</h4>
-    <p>Walk along <strong>Canal Saint-Martin</strong> — iron footbridges, leafy banks, very local. Dinner in the 10th arrondissement.</p>
-  </div>
-</div>
+      <!-- Day 3 -->
+      <div class="day-card">
+        <div class="day-header paris">
+          <h3>Day 3 — Montmartre & Local Life</h3>
+          <span class="day-tag"
+            >Sacré-Cœur · Buttes-Chaumont · Canal Saint-Martin</span
+          >
+        </div>
+        <div class="day-body">
+          <h4>Morning</h4>
+          <ul>
+            <li>
+              Métro to <strong>Montmartre</strong> — take the stairs up (more
+              fun than the funicular!)
+            </li>
+            <li>
+              <strong>Sacré-Cœur Basilica</strong> — the views from the steps
+              are breathtaking
+            </li>
+            <li>
+              Artists' quarter at <strong>Place du Tertre</strong> — maybe get a
+              family caricature?
+            </li>
+            <li>
+              The <strong>"I Love You" wall</strong> at Abbesses — "I love you"
+              in 250 languages
+            </li>
+          </ul>
+          <h4>Lunch</h4>
+          <p>
+            Café terrace in Montmartre — croque monsieur, french onion soup, and
+            citron pressé for the girls.
+          </p>
+          <h4>Afternoon — Choose Your Own Adventure</h4>
+          <div class="playground">
+            <div class="pg-title">🛝 Option A: Parc des Buttes-Chaumont</div>
+            Paris's wildest park. Caves, a waterfall, a temple on a cliff over a
+            lake, and an adventure playground. The girls will think it's an
+            enchanted forest.
+          </div>
+          <div class="playground">
+            <div class="pg-title">🛝 Option B: Champ de Mars Playground</div>
+            Right under the Eiffel Tower. Great playground with tower views.
+            Perfect if you want to see the tower without doing the tourist
+            queue.
+          </div>
+          <h4>Evening</h4>
+          <p>
+            Walk along <strong>Canal Saint-Martin</strong> — iron footbridges,
+            leafy banks, very local. Dinner in the 10th arrondissement.
+          </p>
+        </div>
+      </div>
 
-<!-- ═══════════════════════════════════
+      <!-- ═══════════════════════════════════
      DISNEYLAND PARIS — DAYS 4-5
      ═══════════════════════════════════ -->
-<h2 class="section-title" id="disney">🎠 Disneyland Paris</h2>
-<p class="section-subtitle">2 Days of Magic · RER A from Central Paris</p>
+      <h2 class="section-title" id="disney">🎠 Disneyland Paris</h2>
+      <p class="section-subtitle">2 Days of Magic · RER A from Central Paris</p>
 
-<div class="section-hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Disneyland_Pary%C5%BC_2013_%2813%29.JPG/1920px-Disneyland_Pary%C5%BC_2013_%2813%29.JPG" alt="Sleeping Beauty Castle at Disneyland Paris" loading="lazy">
-  <div class="img-caption">Sleeping Beauty Castle, Disneyland Paris — Photo: Wikimedia Commons</div>
-</div>
+      <div class="section-hero">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Disneyland_Pary%C5%BC_2013_%2813%29.JPG/1920px-Disneyland_Pary%C5%BC_2013_%2813%29.JPG"
+          alt="Sleeping Beauty Castle at Disneyland Paris"
+          loading="lazy"
+        />
+        <div class="img-caption">
+          Sleeping Beauty Castle, Disneyland Paris — Photo: Wikimedia Commons
+        </div>
+      </div>
 
-<!-- Day 4 -->
-<div class="day-card">
-  <div class="day-header paris">
-    <h3>Day 4 — Disneyland Park</h3>
-    <span class="day-tag">Main Park Day</span>
-  </div>
-  <div class="day-body">
-    <div class="transit">
-      <div class="transit-title">🚆 RER A → Marne-la-Vallée / Chessy</div>
-      ~40 minutes from Châtelet. ~€8-10/person each way. Covered by Navigo weekly pass (all zones).
-    </div>
-    <h4>Must-Do Rides</h4>
-    <ul>
-      <li><strong>Big Thunder Mountain</strong> — the whole family will love this one</li>
-      <li><strong>Pirates of the Caribbean</strong> — a classic</li>
-      <li><strong>Hyperspace Mountain</strong> — for the 11-year-old thrill seeker</li>
-      <li><strong>Buzz Lightyear Laser Blast</strong> — competitive family fun</li>
-      <li><strong>It's a Small World</strong> — charming European version</li>
-      <li><strong>Peter Pan's Flight</strong> — get in line early, always popular</li>
-    </ul>
-    <div class="tip">
-      <div class="tip-title">💡 Pro Tip</div>
-      Download the Disneyland Paris app for wait times. Hit Fantasyland first thing (Peter Pan, Small World) before lines build. Save Frontierland and Adventureland for afternoon.
-    </div>
-    <h4>Evening</h4>
-    <p>Stay for the parade and the evening show — Disney Illuminations is spectacular. The castle lighting is worth the wait.</p>
-  </div>
-</div>
+      <!-- Day 4 -->
+      <div class="day-card">
+        <div class="day-header paris">
+          <h3>Day 4 — Disneyland Park</h3>
+          <span class="day-tag">Main Park Day</span>
+        </div>
+        <div class="day-body">
+          <div class="transit">
+            <div class="transit-title">🚆 RER A → Marne-la-Vallée / Chessy</div>
+            ~40 minutes from Châtelet. ~€8-10/person each way. Covered by Navigo
+            weekly pass (all zones).
+          </div>
+          <h4>Must-Do Rides</h4>
+          <ul>
+            <li>
+              <strong>Big Thunder Mountain</strong> — the whole family will love
+              this one
+            </li>
+            <li><strong>Pirates of the Caribbean</strong> — a classic</li>
+            <li>
+              <strong>Hyperspace Mountain</strong> — for the 11-year-old thrill
+              seeker
+            </li>
+            <li>
+              <strong>Buzz Lightyear Laser Blast</strong> — competitive family
+              fun
+            </li>
+            <li>
+              <strong>It's a Small World</strong> — charming European version
+            </li>
+            <li>
+              <strong>Peter Pan's Flight</strong> — get in line early, always
+              popular
+            </li>
+          </ul>
+          <div class="tip">
+            <div class="tip-title">💡 Pro Tip</div>
+            Download the Disneyland Paris app for wait times. Hit Fantasyland
+            first thing (Peter Pan, Small World) before lines build. Save
+            Frontierland and Adventureland for afternoon.
+          </div>
+          <h4>Evening</h4>
+          <p>
+            Stay for the parade and the evening show — Disney Illuminations is
+            spectacular. The castle lighting is worth the wait.
+          </p>
+        </div>
+      </div>
 
-<!-- Day 5 -->
-<div class="day-card">
-  <div class="day-header paris">
-    <h3>Day 5 — Walt Disney Studios / Disney Adventure World</h3>
-    <span class="day-tag">Studios + Frozen!</span>
-  </div>
-  <div class="day-body">
-    <h4>Morning — Disney Adventure World</h4>
-    <ul>
-      <li><strong>World of Frozen</strong> — opened March 2026! Brand new Frozen-themed land</li>
-      <li><strong>Ratatouille: The Adventure</strong> — shrink to rat-size in Gusteau's kitchen</li>
-      <li><strong>Avengers Campus</strong> — meet characters, ride Spider-Man W.E.B. Adventure</li>
-    </ul>
-    <div class="tip">
-      <div class="tip-title">💡 World of Frozen</div>
-      This just opened and will be hugely popular. Arrive at park opening and head straight there. Everly (7) is going to lose her mind.
-    </div>
-    <h4>Afternoon</h4>
-    <p>Hop back to the main Disneyland Park to revisit favorites or catch anything you missed yesterday.</p>
-    <h4>Evening</h4>
-    <p>Dinner at Disney Village (Earl of Sandwich is a solid family choice) before the RER back to Paris. The girls will sleep on the train.</p>
-  </div>
-</div>
+      <!-- Day 5 -->
+      <div class="day-card">
+        <div class="day-header paris">
+          <h3>Day 5 — Walt Disney Studios / Disney Adventure World</h3>
+          <span class="day-tag">Studios + Frozen!</span>
+        </div>
+        <div class="day-body">
+          <h4>Morning — Disney Adventure World</h4>
+          <ul>
+            <li>
+              <strong>World of Frozen</strong> — opened March 2026! Brand new
+              Frozen-themed land
+            </li>
+            <li>
+              <strong>Ratatouille: The Adventure</strong> — shrink to rat-size
+              in Gusteau's kitchen
+            </li>
+            <li>
+              <strong>Avengers Campus</strong> — meet characters, ride
+              Spider-Man W.E.B. Adventure
+            </li>
+          </ul>
+          <div class="tip">
+            <div class="tip-title">💡 World of Frozen</div>
+            This just opened and will be hugely popular. Arrive at park opening
+            and head straight there. Everly (7) is going to lose her mind.
+          </div>
+          <h4>Afternoon</h4>
+          <p>
+            Hop back to the main Disneyland Park to revisit favorites or catch
+            anything you missed yesterday.
+          </p>
+          <h4>Evening</h4>
+          <p>
+            Dinner at Disney Village (Earl of Sandwich is a solid family choice)
+            before the RER back to Paris. The girls will sleep on the train.
+          </p>
+        </div>
+      </div>
 
-<!-- ═══════════════════════════════════
+      <!-- ═══════════════════════════════════
      BELGIUM — DAYS 6-8
      ═══════════════════════════════════ -->
-<h2 class="section-title" id="belgium">🇧🇪 Belgium</h2>
-<p class="section-subtitle">2 Nights in Ghent · Day Trip to Bruges · Hotel near Korenmarkt</p>
+      <h2 class="section-title" id="belgium">🇧🇪 Belgium</h2>
+      <p class="section-subtitle">
+        2 Nights in Ghent · Day Trip to Bruges · Hotel near Korenmarkt
+      </p>
 
-<div class="section-hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Graslei_Ghent.jpg/1920px-Graslei_Ghent.jpg" alt="Graslei waterfront in Ghent, Belgium" loading="lazy">
-  <div class="img-caption">Graslei Waterfront, Ghent — Photo: Wikimedia Commons</div>
-</div>
+      <div class="section-hero">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Graslei_Ghent.jpg/1920px-Graslei_Ghent.jpg"
+          alt="Graslei waterfront in Ghent, Belgium"
+          loading="lazy"
+        />
+        <div class="img-caption">
+          Graslei Waterfront, Ghent — Photo: Wikimedia Commons
+        </div>
+      </div>
 
-<!-- Day 6 -->
-<div class="day-card">
-  <div class="day-header travel">
-    <h3>Day 6 — Paris to Ghent</h3>
-    <span class="day-tag">Travel Day</span>
-  </div>
-  <div class="day-body">
-    <h4>Morning</h4>
-    <p>Pack up, say <em>au revoir</em> to Paris. One last pain au chocolat from the boulangerie downstairs.</p>
-    <div class="transit">
-      <div class="transit-title">🚄 Eurostar: Paris Gare du Nord → Brussels-Midi</div>
-      ~1 hour 20 minutes. Book early for best fares (€40-80 vs €150+ last minute).
-    </div>
-    <div class="transit">
-      <div class="transit-title">🚆 IC Train: Brussels → Ghent-Sint-Pieters</div>
-      ~30 minutes. No reservation needed. Belgian rail is cheap and easy.
-    </div>
-    <h4>Afternoon — Explore Ghent</h4>
-    <ul>
-      <li>Check into your hotel near <strong>Korenmarkt</strong></li>
-      <li>Walk the <strong>Graslei & Korenlei</strong> waterfront — the most photographed spot in Ghent</li>
-      <li><strong>St. Bavo's Cathedral</strong> — home of the famous Ghent Altarpiece</li>
-      <li><strong>Gravensteen Castle</strong> exterior — a medieval castle right in the city center</li>
-    </ul>
-    <h4>Evening</h4>
-    <p>Belgian frites from a frituur (Hadley and Everly will be in heaven), waffles for dessert, and hot chocolate or Belgian beer by the canal.</p>
-    <div class="tip">
-      <div class="tip-title">💡 Hotel vs. Airbnb</div>
-      For just 2 nights, a hotel is the better call. You dodge the Airbnb cleaning fee ($75-150), get daily housekeeping, and have a reception desk for local tips. Look for family rooms near Korenmarkt.
-    </div>
-  </div>
-</div>
+      <!-- Day 6 -->
+      <div class="day-card">
+        <div class="day-header travel">
+          <h3>Day 6 — Paris to Ghent</h3>
+          <span class="day-tag">Travel Day</span>
+        </div>
+        <div class="day-body">
+          <h4>Morning</h4>
+          <p>
+            Pack up, say <em>au revoir</em> to Paris. One last pain au chocolat
+            from the boulangerie downstairs.
+          </p>
+          <div class="transit">
+            <div class="transit-title">
+              🚄 Eurostar: Paris Gare du Nord → Brussels-Midi
+            </div>
+            ~1 hour 20 minutes. Book early for best fares (€40-80 vs €150+ last
+            minute).
+          </div>
+          <div class="transit">
+            <div class="transit-title">
+              🚆 IC Train: Brussels → Ghent-Sint-Pieters
+            </div>
+            ~30 minutes. No reservation needed. Belgian rail is cheap and easy.
+          </div>
+          <h4>Afternoon — Explore Ghent</h4>
+          <ul>
+            <li>Check into your hotel near <strong>Korenmarkt</strong></li>
+            <li>
+              Walk the <strong>Graslei & Korenlei</strong> waterfront — the most
+              photographed spot in Ghent
+            </li>
+            <li>
+              <strong>St. Bavo's Cathedral</strong> — home of the famous Ghent
+              Altarpiece
+            </li>
+            <li>
+              <strong>Gravensteen Castle</strong> exterior — a medieval castle
+              right in the city center
+            </li>
+          </ul>
+          <h4>Evening</h4>
+          <p>
+            Belgian frites from a frituur (Hadley and Everly will be in heaven),
+            waffles for dessert, and hot chocolate or Belgian beer by the canal.
+          </p>
+          <div class="tip">
+            <div class="tip-title">💡 Hotel vs. Airbnb</div>
+            For just 2 nights, a hotel is the better call. You dodge the Airbnb
+            cleaning fee ($75-150), get daily housekeeping, and have a reception
+            desk for local tips. Look for family rooms near Korenmarkt.
+          </div>
+        </div>
+      </div>
 
-<!-- Day 7 -->
-<div class="day-card">
-  <div class="day-header belgium">
-    <h3>Day 7 — Bruges Day Trip + Ghent</h3>
-    <span class="day-tag">Two Cities, One Day</span>
-  </div>
-  <div class="day-body">
-    <div class="section-hero" style="margin:-24px -24px 20px;border-radius:0;box-shadow:none">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rozenhoedkaai_%28canal%29_and_Belfry_of_Bruges%2C_Bruges%2C_Belgium_%28Ank_Kumar%2C_Infosys_Limited%29_05.jpg/1920px-Rozenhoedkaai_%28canal%29_and_Belfry_of_Bruges%2C_Bruges%2C_Belgium_%28Ank_Kumar%2C_Infosys_Limited%29_05.jpg" alt="Rozenhoedkaai canal and Belfry of Bruges" loading="lazy" style="height:260px">
-      <div class="img-caption">Rozenhoedkaai, Bruges — Photo: Wikimedia Commons</div>
-    </div>
-    <h4>Morning — Bruges</h4>
-    <div class="transit">
-      <div class="transit-title">🚆 Train: Ghent → Bruges</div>
-      ~30 minutes. Cheap Belgian rail, no reservation needed. Runs frequently.
-    </div>
-    <ul>
-      <li><strong>Markt Square</strong> — the stunning medieval main square</li>
-      <li><strong>Belfry of Bruges</strong> — climb the 366 steps for incredible views (if the girls are up for it!)</li>
-      <li><strong>Canal boat tour</strong> — ~30 min, ~€10/person. The best way to see Bruges</li>
-      <li><strong>Chocolate shops</strong> — this is Belgium, after all. The Chocolate Line is excellent</li>
-    </ul>
-    <div class="playground">
-      <div class="pg-title">🛝 Koningin Astridpark, Bruges</div>
-      Right near the city center. A nice green space with playground equipment where the girls can run around between sightseeing stops.
-    </div>
-    <h4>Afternoon — Back to Ghent</h4>
-    <ul>
-      <li>Train back to Ghent (~30 min)</li>
-      <li>Explore the <strong>Patershol</strong> neighborhood — cobblestone streets, cozy restaurants</li>
-      <li>Hunt for <strong>Ghent street art</strong> — the city is covered in incredible murals</li>
-      <li>Belgian craft beer tasting for the adults (Gruut brewery is local)</li>
-    </ul>
-    <div class="playground">
-      <div class="pg-title">🛝 Citadelpark, Ghent</div>
-      Large park with playground, pond, and green space. Also check out Blaarmeersen recreation park if you want something bigger.
-    </div>
-  </div>
-</div>
+      <!-- Day 7 -->
+      <div class="day-card">
+        <div class="day-header belgium">
+          <h3>Day 7 — Bruges Day Trip + Ghent</h3>
+          <span class="day-tag">Two Cities, One Day</span>
+        </div>
+        <div class="day-body">
+          <div
+            class="section-hero"
+            style="margin: -24px -24px 20px; border-radius: 0; box-shadow: none"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rozenhoedkaai_%28canal%29_and_Belfry_of_Bruges%2C_Bruges%2C_Belgium_%28Ank_Kumar%2C_Infosys_Limited%29_05.jpg/1920px-Rozenhoedkaai_%28canal%29_and_Belfry_of_Bruges%2C_Bruges%2C_Belgium_%28Ank_Kumar%2C_Infosys_Limited%29_05.jpg"
+              alt="Rozenhoedkaai canal and Belfry of Bruges"
+              loading="lazy"
+              style="height: 260px"
+            />
+            <div class="img-caption">
+              Rozenhoedkaai, Bruges — Photo: Wikimedia Commons
+            </div>
+          </div>
+          <h4>Morning — Bruges</h4>
+          <div class="transit">
+            <div class="transit-title">🚆 Train: Ghent → Bruges</div>
+            ~30 minutes. Cheap Belgian rail, no reservation needed. Runs
+            frequently.
+          </div>
+          <ul>
+            <li>
+              <strong>Markt Square</strong> — the stunning medieval main square
+            </li>
+            <li>
+              <strong>Belfry of Bruges</strong> — climb the 366 steps for
+              incredible views (if the girls are up for it!)
+            </li>
+            <li>
+              <strong>Canal boat tour</strong> — ~30 min, ~€10/person. The best
+              way to see Bruges
+            </li>
+            <li>
+              <strong>Chocolate shops</strong> — this is Belgium, after all. The
+              Chocolate Line is excellent
+            </li>
+          </ul>
+          <div class="playground">
+            <div class="pg-title">🛝 Koningin Astridpark, Bruges</div>
+            Right near the city center. A nice green space with playground
+            equipment where the girls can run around between sightseeing stops.
+          </div>
+          <h4>Afternoon — Back to Ghent</h4>
+          <ul>
+            <li>Train back to Ghent (~30 min)</li>
+            <li>
+              Explore the <strong>Patershol</strong> neighborhood — cobblestone
+              streets, cozy restaurants
+            </li>
+            <li>
+              Hunt for <strong>Ghent street art</strong> — the city is covered
+              in incredible murals
+            </li>
+            <li>
+              Belgian craft beer tasting for the adults (Gruut brewery is local)
+            </li>
+          </ul>
+          <div class="playground">
+            <div class="pg-title">🛝 Citadelpark, Ghent</div>
+            Large park with playground, pond, and green space. Also check out
+            Blaarmeersen recreation park if you want something bigger.
+          </div>
+        </div>
+      </div>
 
-<!-- ═══════════════════════════════════
+      <!-- ═══════════════════════════════════
      LONDON — DAYS 8-12
      ═══════════════════════════════════ -->
-<h2 class="section-title" id="london">🇬🇧 London</h2>
-<p class="section-subtitle">5 Nights · Notting Hill / Paddington · 2-Bedroom Airbnb · Your 4th Visit!</p>
+      <h2 class="section-title" id="london">🇬🇧 London</h2>
+      <p class="section-subtitle">
+        5 Nights · Notting Hill / Paddington · 2-Bedroom Airbnb · Your 4th
+        Visit!
+      </p>
 
-<div class="section-hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Notting_hill_colorful_houses.jpg/1920px-Notting_hill_colorful_houses.jpg" alt="Colorful houses of Notting Hill, London" loading="lazy">
-  <div class="img-caption">Notting Hill — Photo: Wikimedia Commons</div>
-</div>
+      <div class="section-hero">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Notting_hill_colorful_houses.jpg/1920px-Notting_hill_colorful_houses.jpg"
+          alt="Colorful houses of Notting Hill, London"
+          loading="lazy"
+        />
+        <div class="img-caption">Notting Hill — Photo: Wikimedia Commons</div>
+      </div>
 
-<!-- Day 8 -->
-<div class="day-card">
-  <div class="day-header travel">
-    <h3>Day 8 — Ghent to London</h3>
-    <span class="day-tag">Travel Day</span>
-  </div>
-  <div class="day-body">
-    <div class="transit">
-      <div class="transit-title">🚆 IC Train: Ghent → Brussels-Midi (~30 min)</div>
-    </div>
-    <div class="transit">
-      <div class="transit-title">🚄 Eurostar: Brussels → London St Pancras (~2 hours)</div>
-      Total journey ~3 hours including transfer. Book early for the best Eurostar fares.
-    </div>
-    <h4>Afternoon</h4>
-    <ul>
-      <li>Tube from St Pancras to Notting Hill Gate or Paddington</li>
-      <li>Check into your Airbnb — you know this neighborhood. Welcome home (again)!</li>
-    </ul>
-    <div class="playground">
-      <div class="pg-title">🛝 Holland Park Adventure Playground</div>
-      Towers, zip wire, climbing frames. And the park has resident peacocks — Everly will freak out. This is 10 minutes from your Airbnb.
-    </div>
-    <h4>Evening</h4>
-    <p>Walk Portobello Road, soak in the neighborhood you love. Local pub dinner — Sunday roast if timing works out.</p>
-  </div>
-</div>
+      <!-- Day 8 -->
+      <div class="day-card">
+        <div class="day-header travel">
+          <h3>Day 8 — Ghent to London</h3>
+          <span class="day-tag">Travel Day</span>
+        </div>
+        <div class="day-body">
+          <div class="transit">
+            <div class="transit-title">
+              🚆 IC Train: Ghent → Brussels-Midi (~30 min)
+            </div>
+          </div>
+          <div class="transit">
+            <div class="transit-title">
+              🚄 Eurostar: Brussels → London St Pancras (~2 hours)
+            </div>
+            Total journey ~3 hours including transfer. Book early for the best
+            Eurostar fares.
+          </div>
+          <h4>Afternoon</h4>
+          <ul>
+            <li>Tube from St Pancras to Notting Hill Gate or Paddington</li>
+            <li>
+              Check into your Airbnb — you know this neighborhood. Welcome home
+              (again)!
+            </li>
+          </ul>
+          <div class="playground">
+            <div class="pg-title">🛝 Holland Park Adventure Playground</div>
+            Towers, zip wire, climbing frames. And the park has resident
+            peacocks — Everly will freak out. This is 10 minutes from your
+            Airbnb.
+          </div>
+          <h4>Evening</h4>
+          <p>
+            Walk Portobello Road, soak in the neighborhood you love. Local pub
+            dinner — Sunday roast if timing works out.
+          </p>
+        </div>
+      </div>
 
-<!-- Days 9-12 -->
-<div class="day-card">
-  <div class="day-header london">
-    <h3>Days 9–12 — London, Like Locals</h3>
-    <span class="day-tag">Your 4th Visit · Skip the Tourist Traps</span>
-  </div>
-  <div class="day-body">
-    <p>You know London. You love London. This isn't about ticking boxes — it's about living here for a few days. Here's a menu of ideas to mix and match:</p>
+      <!-- Days 9-12 -->
+      <div class="day-card">
+        <div class="day-header london">
+          <h3>Days 9–12 — London, Like Locals</h3>
+          <span class="day-tag">Your 4th Visit · Skip the Tourist Traps</span>
+        </div>
+        <div class="day-body">
+          <p>
+            You know London. You love London. This isn't about ticking boxes —
+            it's about living here for a few days. Here's a menu of ideas to mix
+            and match:
+          </p>
 
-    <h4>🏘 Neighborhoods & Markets</h4>
-    <ul>
-      <li><strong>Portobello Road Market</strong> — Saturday is the biggest day (antiques, food, vintage)</li>
-      <li><strong>Borough Market</strong> — incredible lunch spot. Scotch eggs, raclette, every cuisine imaginable</li>
-      <li><strong>Columbia Road Flower Market</strong> — Sunday mornings only. Gorgeous.</li>
-      <li><strong>Camden Market</strong> — reach it by walking the canal from Little Venice (see below)</li>
-    </ul>
+          <h4>🏘 Neighborhoods & Markets</h4>
+          <ul>
+            <li>
+              <strong>Portobello Road Market</strong> — Saturday is the biggest
+              day (antiques, food, vintage)
+            </li>
+            <li>
+              <strong>Borough Market</strong> — incredible lunch spot. Scotch
+              eggs, raclette, every cuisine imaginable
+            </li>
+            <li>
+              <strong>Columbia Road Flower Market</strong> — Sunday mornings
+              only. Gorgeous.
+            </li>
+            <li>
+              <strong>Camden Market</strong> — reach it by walking the canal
+              from Little Venice (see below)
+            </li>
+          </ul>
 
-    <h4>🚴 Walks & Green Spaces</h4>
-    <ul>
-      <li><strong>Hyde Park</strong> long walks — Serpentine lake, Italian Gardens, right out your door</li>
-      <li><strong>Regent's Canal: Little Venice → Camden</strong> — one of London's best walks. Narrowboats, cafés, street art, 45 minutes end to end</li>
-      <li><strong>Hampstead Heath</strong> — Parliament Hill for the best views of the London skyline</li>
-      <li><strong>South Bank walk</strong> — Tate Modern → Shakespeare's Globe → Borough Market</li>
-    </ul>
+          <h4>🚴 Walks & Green Spaces</h4>
+          <ul>
+            <li>
+              <strong>Hyde Park</strong> long walks — Serpentine lake, Italian
+              Gardens, right out your door
+            </li>
+            <li>
+              <strong>Regent's Canal: Little Venice → Camden</strong> — one of
+              London's best walks. Narrowboats, cafés, street art, 45 minutes
+              end to end
+            </li>
+            <li>
+              <strong>Hampstead Heath</strong> — Parliament Hill for the best
+              views of the London skyline
+            </li>
+            <li>
+              <strong>South Bank walk</strong> — Tate Modern → Shakespeare's
+              Globe → Borough Market
+            </li>
+          </ul>
 
-    <h4>🎭 Culture</h4>
-    <ul>
-      <li><strong>West End show</strong> — book a matinee. Hadley (11) is old enough for most shows. Check TKTS booth in Leicester Square for day-of discounts</li>
-      <li><strong>Natural History Museum</strong> — free, always worth a revisit. The Hintze Hall blue whale never gets old</li>
-      <li><strong>V&A Museum</strong> — free. Fashion, design, and a beautiful café</li>
-      <li><strong>Science Museum</strong> — free. Wonderlab is great for kids (~£10)</li>
-    </ul>
+          <h4>🎭 Culture</h4>
+          <ul>
+            <li>
+              <strong>West End show</strong> — book a matinee. Hadley (11) is
+              old enough for most shows. Check TKTS booth in Leicester Square
+              for day-of discounts
+            </li>
+            <li>
+              <strong>Natural History Museum</strong> — free, always worth a
+              revisit. The Hintze Hall blue whale never gets old
+            </li>
+            <li>
+              <strong>V&A Museum</strong> — free. Fashion, design, and a
+              beautiful café
+            </li>
+            <li>
+              <strong>Science Museum</strong> — free. Wonderlab is great for
+              kids (~£10)
+            </li>
+          </ul>
 
-    <div class="playground">
-      <div class="pg-title">🛝 Coram's Fields</div>
-      7 acres of playground. The rule: adults are only admitted if accompanied by a child. City farm, sandpits, paddling pool (summer). A true hidden gem.
-    </div>
-    <div class="playground">
-      <div class="pg-title">🛝 Jubilee Gardens Playground (South Bank)</div>
-      Right by the London Eye. Great play structures, sand & water play. Perfect mid-walk stop on the South Bank.
-    </div>
-    <div class="playground">
-      <div class="pg-title">🛝 Holland Park Adventure Playground</div>
-      You'll probably come back here multiple times. It's that good, and it's that close to home base.
-    </div>
+          <div class="playground">
+            <div class="pg-title">🛝 Coram's Fields</div>
+            7 acres of playground. The rule: adults are only admitted if
+            accompanied by a child. City farm, sandpits, paddling pool (summer).
+            A true hidden gem.
+          </div>
+          <div class="playground">
+            <div class="pg-title">
+              🛝 Jubilee Gardens Playground (South Bank)
+            </div>
+            Right by the London Eye. Great play structures, sand & water play.
+            Perfect mid-walk stop on the South Bank.
+          </div>
+          <div class="playground">
+            <div class="pg-title">🛝 Holland Park Adventure Playground</div>
+            You'll probably come back here multiple times. It's that good, and
+            it's that close to home base.
+          </div>
 
-    <div class="tip">
-      <div class="tip-title">💡 Diana Memorial Playground</div>
-      Heads up: Diana Memorial Playground in Kensington Gardens is closed for refurbishment until summer 2026. Check before visiting.
-    </div>
+          <div class="tip">
+            <div class="tip-title">💡 Diana Memorial Playground</div>
+            Heads up: Diana Memorial Playground in Kensington Gardens is closed
+            for refurbishment until summer 2026. Check before visiting.
+          </div>
 
-    <div class="transit">
-      <div class="transit-title">💳 London Transit</div>
-      Under-11s ride free on all TfL (Tube, bus, Overground). Adults: just tap contactless — daily cap is £8.90 for Zones 1-2. No Oyster card needed.
-    </div>
-  </div>
-</div>
+          <div class="transit">
+            <div class="transit-title">💳 London Transit</div>
+            Under-11s ride free on all TfL (Tube, bus, Overground). Adults: just
+            tap contactless — daily cap is £8.90 for Zones 1-2. No Oyster card
+            needed.
+          </div>
+        </div>
+      </div>
 
-<!-- Day 13 -->
-<div class="day-card">
-  <div class="day-header travel">
-    <h3>Day 13 — Fly Home</h3>
-    <span class="day-tag">London → Nashville</span>
-  </div>
-  <div class="day-body">
-    <h4>Morning</h4>
-    <ul>
-      <li>Pack up, say goodbye to London (for now — see you next year?)</li>
-      <li>Full English breakfast at a local café to fuel the journey</li>
-    </ul>
-    <div class="transit">
-      <div class="transit-title">🚆 Getting to Heathrow</div>
-      <strong>Piccadilly Line</strong> from Paddington area: ~50 min, cheapest option (~£5.50/adult). <br>
-      <strong>Heathrow Express</strong> from Paddington: 15 min, premium option (~£25/adult). <br>
-      <strong>Elizabeth Line</strong> from Paddington: ~30 min, great middle ground (~£12.80).
-    </div>
-    <h4>Flight</h4>
-    <p>LHR → BNA. British Airways flies direct 3x/week (check schedule). Otherwise Delta via ATL or JFK. You'll land in Nashville the same day you left.</p>
-  </div>
-</div>
+      <!-- Day 13 -->
+      <div class="day-card">
+        <div class="day-header travel">
+          <h3>Day 13 — Fly Home</h3>
+          <span class="day-tag">London → Nashville</span>
+        </div>
+        <div class="day-body">
+          <h4>Morning</h4>
+          <ul>
+            <li>
+              Pack up, say goodbye to London (for now — see you next year?)
+            </li>
+            <li>Full English breakfast at a local café to fuel the journey</li>
+          </ul>
+          <div class="transit">
+            <div class="transit-title">🚆 Getting to Heathrow</div>
+            <strong>Piccadilly Line</strong> from Paddington area: ~50 min,
+            cheapest option (~£5.50/adult). <br />
+            <strong>Heathrow Express</strong> from Paddington: 15 min, premium
+            option (~£25/adult). <br />
+            <strong>Elizabeth Line</strong> from Paddington: ~30 min, great
+            middle ground (~£12.80).
+          </div>
+          <h4>Flight</h4>
+          <p>
+            LHR → BNA. British Airways flies direct 3x/week (check schedule).
+            Otherwise Delta via ATL or JFK. You'll land in Nashville the same
+            day you left.
+          </p>
+        </div>
+      </div>
 
-<!-- ═══════════════════════════════════
+      <!-- ═══════════════════════════════════
      BOOKING STRATEGY
      ═══════════════════════════════════ -->
-<h2 class="section-title" id="booking">📅 Booking Strategy</h2>
-<p class="section-subtitle">When to book what — and how to save the most</p>
+      <h2 class="section-title" id="booking">📅 Booking Strategy</h2>
+      <p class="section-subtitle">
+        When to book what — and how to save the most
+      </p>
 
-<div class="strategy-grid">
-  <div class="strategy-card">
-    <h4>✈ Flights</h4>
-    <p>Open-jaw ticket: BNA → CDG, LHR → BNA. Search on Google Flights + Skyscanner. Best search days: Sunday, Tuesday, Wednesday. BA flies BNA→LHR direct 3x/week.</p>
-    <span class="when">Book 3–5 months ahead (5–6 for summer)</span>
-  </div>
-  <div class="strategy-card">
-    <h4>🏠 Paris Airbnb</h4>
-    <p>2-bedroom in 1st/2nd/3rd arr. The Montorgueil neighborhood (2nd) is ideal: walkable, local bakeries, near Les Halles and Métro. Filter for Superhost, washer, and good reviews from families.</p>
-    <span class="when">Book 3–4 months ahead</span>
-  </div>
-  <div class="strategy-card">
-    <h4>🏨 Ghent Hotel</h4>
-    <p>Family room near Korenmarkt. 2 nights doesn't justify an Airbnb cleaning fee ($75-150). Hotels give you flexibility and daily housekeeping.</p>
-    <span class="when">Book 2–3 months ahead</span>
-  </div>
-  <div class="strategy-card">
-    <h4>🏠 London Airbnb</h4>
-    <p>2-bedroom in Notting Hill / Paddington / Bayswater. Just north of Hyde Park. You know the area — aim for the streets you love. Superhost, washer, walkable to Tube.</p>
-    <span class="when">Book 3–4 months ahead</span>
-  </div>
-  <div class="strategy-card">
-    <h4>🚄 Eurostar</h4>
-    <p>Paris → Brussels + Brussels → London. Tickets release up to 4 months ahead. Early booking saves 60-70%. Set an alert on the Eurostar app for your dates.</p>
-    <span class="when">Book at ticket release</span>
-  </div>
-  <div class="strategy-card">
-    <h4>🎠 Disneyland Paris</h4>
-    <p>Date-tiered pricing: Eco/Low dates are cheapest. Weekdays in shoulder season are 30-40% cheaper than peak. 2-day/2-park tickets give the best value. Buy on the official site — not resellers.</p>
-    <span class="when">Book 2–3 months ahead</span>
-  </div>
-</div>
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <h4>✈ Flights</h4>
+          <p>
+            Open-jaw ticket: BNA → CDG, LHR → BNA. Search on Google Flights +
+            Skyscanner. Best search days: Sunday, Tuesday, Wednesday. BA flies
+            BNA→LHR direct 3x/week.
+          </p>
+          <span class="when">Book 3–5 months ahead (5–6 for summer)</span>
+        </div>
+        <div class="strategy-card">
+          <h4>🏠 Paris Airbnb</h4>
+          <p>
+            2-bedroom in 1st/2nd/3rd arr. The Montorgueil neighborhood (2nd) is
+            ideal: walkable, local bakeries, near Les Halles and Métro. Filter
+            for Superhost, washer, and good reviews from families.
+          </p>
+          <span class="when">Book 3–4 months ahead</span>
+        </div>
+        <div class="strategy-card">
+          <h4>🏨 Ghent Hotel</h4>
+          <p>
+            Family room near Korenmarkt. 2 nights doesn't justify an Airbnb
+            cleaning fee ($75-150). Hotels give you flexibility and daily
+            housekeeping.
+          </p>
+          <span class="when">Book 2–3 months ahead</span>
+        </div>
+        <div class="strategy-card">
+          <h4>🏠 London Airbnb</h4>
+          <p>
+            2-bedroom in Notting Hill / Paddington / Bayswater. Just north of
+            Hyde Park. You know the area — aim for the streets you love.
+            Superhost, washer, walkable to Tube.
+          </p>
+          <span class="when">Book 3–4 months ahead</span>
+        </div>
+        <div class="strategy-card">
+          <h4>🚄 Eurostar</h4>
+          <p>
+            Paris → Brussels + Brussels → London. Tickets release up to 4 months
+            ahead. Early booking saves 60-70%. Set an alert on the Eurostar app
+            for your dates.
+          </p>
+          <span class="when">Book at ticket release</span>
+        </div>
+        <div class="strategy-card">
+          <h4>🎠 Disneyland Paris</h4>
+          <p>
+            Date-tiered pricing: Eco/Low dates are cheapest. Weekdays in
+            shoulder season are 30-40% cheaper than peak. 2-day/2-park tickets
+            give the best value. Buy on the official site — not resellers.
+          </p>
+          <span class="when">Book 2–3 months ahead</span>
+        </div>
+      </div>
 
-<div class="tip" style="margin-top:20px">
-  <div class="tip-title">💡 Best Travel Windows</div>
-  <strong>Late September / early October</strong> or <strong>April / May</strong> are the sweet spot: mild weather, smaller crowds, shoulder-season pricing. Summer (June–August) is most expensive but aligns with school schedules. If you can swing September, you'll save 20-30% across the board.
-</div>
+      <div class="tip" style="margin-top: 20px">
+        <div class="tip-title">💡 Best Travel Windows</div>
+        <strong>Late September / early October</strong> or
+        <strong>April / May</strong> are the sweet spot: mild weather, smaller
+        crowds, shoulder-season pricing. Summer (June–August) is most expensive
+        but aligns with school schedules. If you can swing September, you'll
+        save 20-30% across the board.
+      </div>
 
-<!-- ═══════════════════════════════════
+      <!-- ═══════════════════════════════════
      BUDGET OVERVIEW
      ═══════════════════════════════════ -->
-<h2 class="section-title" id="budget">💰 Budget Overview</h2>
-<p class="section-subtitle">Three-tier estimates for a family of 4 · 13 days / 12 nights</p>
+      <h2 class="section-title" id="budget">💰 Budget Overview</h2>
+      <p class="section-subtitle">
+        Three-tier estimates for a family of 4 · 13 days / 12 nights
+      </p>
 
-<div style="overflow-x:auto">
-<table class="budget-table">
-  <thead>
-    <tr><th>Category</th><th>Budget</th><th>Comfortable</th><th>Premium</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><strong>Flights</strong> (open-jaw, 4 pax)</td><td>~$2,600</td><td>~$4,000</td><td>~$6,000</td></tr>
-    <tr><td><strong>Paris Airbnb</strong> (5 nights)</td><td>~$1,000</td><td>~$1,375</td><td>~$1,875</td></tr>
-    <tr><td><strong>Ghent Hotel</strong> (2 nights)</td><td>~$240</td><td>~$350</td><td>~$500</td></tr>
-    <tr><td><strong>London Airbnb</strong> (5 nights)</td><td>~$1,250</td><td>~$1,625</td><td>~$2,125</td></tr>
-    <tr><td><strong>Ground Transport</strong> (Eurostar, transit passes, etc.)</td><td>~$785</td><td>~$1,105</td><td>~$1,575</td></tr>
-    <tr><td><strong>Attractions & Disney</strong></td><td>~$995</td><td>~$1,515</td><td>~$2,275</td></tr>
-    <tr><td><strong>Food</strong> (13 days)</td><td>~$1,300</td><td>~$1,950</td><td>~$2,600</td></tr>
-    <tr><td><strong>Miscellaneous & Buffer</strong></td><td>~$500</td><td>~$1,000</td><td>~$1,700</td></tr>
-    <tr class="total"><td><strong>ESTIMATED TOTAL</strong></td><td><strong>~$8,700</strong></td><td><strong>~$12,900</strong></td><td><strong>~$19,000</strong></td></tr>
-  </tbody>
-</table>
-</div>
+      <div style="overflow-x: auto">
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Budget</th>
+              <th>Comfortable</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Flights</strong> (open-jaw, 4 pax)</td>
+              <td>~$2,600</td>
+              <td>~$4,000</td>
+              <td>~$6,000</td>
+            </tr>
+            <tr>
+              <td><strong>Paris Airbnb</strong> (5 nights)</td>
+              <td>~$1,000</td>
+              <td>~$1,375</td>
+              <td>~$1,875</td>
+            </tr>
+            <tr>
+              <td><strong>Ghent Hotel</strong> (2 nights)</td>
+              <td>~$240</td>
+              <td>~$350</td>
+              <td>~$500</td>
+            </tr>
+            <tr>
+              <td><strong>London Airbnb</strong> (5 nights)</td>
+              <td>~$1,250</td>
+              <td>~$1,625</td>
+              <td>~$2,125</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Ground Transport</strong> (Eurostar, transit passes,
+                etc.)
+              </td>
+              <td>~$785</td>
+              <td>~$1,105</td>
+              <td>~$1,575</td>
+            </tr>
+            <tr>
+              <td><strong>Attractions & Disney</strong></td>
+              <td>~$995</td>
+              <td>~$1,515</td>
+              <td>~$2,275</td>
+            </tr>
+            <tr>
+              <td><strong>Food</strong> (13 days)</td>
+              <td>~$1,300</td>
+              <td>~$1,950</td>
+              <td>~$2,600</td>
+            </tr>
+            <tr>
+              <td><strong>Miscellaneous & Buffer</strong></td>
+              <td>~$500</td>
+              <td>~$1,000</td>
+              <td>~$1,700</td>
+            </tr>
+            <tr class="total">
+              <td><strong>ESTIMATED TOTAL</strong></td>
+              <td><strong>~$8,700</strong></td>
+              <td><strong>~$12,900</strong></td>
+              <td><strong>~$19,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="tip" style="margin-top:16px">
-  <div class="tip-title">💡 Paris Transit Hack</div>
-  <strong>Navigo Weekly Pass: €32.40/person</strong> — unlimited Metro, RER (all zones, including CDG airport and Disneyland), buses, and trams for a full week. The 7-year-old rides free; the 11-year-old needs a child Navigo (half fare). This is almost certainly cheaper than buying individual tickets. The week runs Monday–Sunday, so plan arrival day accordingly.
-</div>
+      <div class="tip" style="margin-top: 16px">
+        <div class="tip-title">💡 Paris Transit Hack</div>
+        <strong>Navigo Weekly Pass: €32.40/person</strong> — unlimited Metro,
+        RER (all zones, including CDG airport and Disneyland), buses, and trams
+        for a full week. The 7-year-old rides free; the 11-year-old needs a
+        child Navigo (half fare). This is almost certainly cheaper than buying
+        individual tickets. The week runs Monday–Sunday, so plan arrival day
+        accordingly.
+      </div>
+    </main>
 
-</main>
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="hearts">❤️ 🇫🇷 🇧🇪 🇬🇧 ❤️</div>
+      <p>
+        Creamer Family European Adventure — Nashville → Paris → Belgium → London
+        → Home
+      </p>
+      <p style="margin-top: 6px; opacity: 0.6">
+        Built with love and Copilot · 2026
+      </p>
+    </footer>
 
-<!-- ========== FOOTER ========== -->
-<footer>
-  <div class="hearts">❤️ 🇫🇷 🇧🇪 🇬🇧 ❤️</div>
-  <p>Creamer Family European Adventure — Nashville → Paris → Belgium → London → Home</p>
-  <p style="margin-top:6px;opacity:.6">Built with love and Copilot · 2026</p>
-</footer>
-
-<!-- ========== JS ========== -->
-<script>
-// Smooth scroll for nav links
-document.querySelectorAll('.sticky-nav a').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-
-// Active nav highlighting on scroll
-const sections=document.querySelectorAll('.section-title');
-const navLinks=document.querySelectorAll('.sticky-nav a');
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      navLinks.forEach(l=>l.classList.remove('active'));
-      const link=document.querySelector(`.sticky-nav a[href="#${e.target.id}"]`);
-      if(link) link.classList.add('active');
-    }
-  });
-},{rootMargin:'-80px 0px -60% 0px',threshold:0});
-sections.forEach(s=>obs.observe(s));
-
-// Lazy loading fallback for older browsers
-if(!('loading' in HTMLImageElement.prototype)){
-  document.querySelectorAll('img[loading="lazy"]').forEach(img=>{
-    img.src=img.src;
-  });
-}
-</script>
-</body>
+    <!-- ========== JS ========== -->
+    <script src="script.js"></script>
+  </body>
 </html>

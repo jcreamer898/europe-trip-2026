@@ -1,0 +1,407 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --navy: #1b2a4a;
+  --blue: #2e5090;
+  --light-blue: #d6e4f0;
+  --paris: #2e5090;
+  --paris-light: #ebf0f7;
+  --paris-accent: #4a7ab5;
+  --belgium: #d4820a;
+  --belgium-light: #fff3e0;
+  --belgium-accent: #f5a623;
+  --london: #c62828;
+  --london-light: #ffebee;
+  --london-accent: #e57373;
+  --travel: #455a64;
+  --travel-light: #eceff1;
+  --travel-accent: #78909c;
+  --bg: #fafbfd;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --text-light: #5a6370;
+  --border: #e2e8f0;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --radius: 16px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.72;
+}
+
+/* ── HERO ───────────────────────────── */
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--navy) 0%,
+    var(--blue) 50%,
+    var(--paris-accent) 100%
+  );
+  color: #fff;
+  padding: 90px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.hero * {
+  position: relative;
+}
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.hero .subtitle {
+  font-size: 1.15em;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.route {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.route .badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-size: 0.88em;
+  font-weight: 500;
+}
+.route .arrow {
+  opacity: 0.5;
+  font-size: 1.1em;
+}
+
+/* ── STICKY NAV ─────────────────────── */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.sticky-nav ul {
+  list-style: none;
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.sticky-nav a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--text-light);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.sticky-nav a:hover,
+.sticky-nav a.active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+/* ── LAYOUT ─────────────────────────── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── SECTION HERO IMAGES ────────────── */
+.section-hero {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 28px 0 8px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.section-hero img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.section-hero:hover img {
+  transform: scale(1.03);
+}
+.section-hero .img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  color: #fff;
+  padding: 40px 20px 14px;
+  font-size: 0.82em;
+  font-weight: 500;
+}
+
+/* ── SECTION TITLES ─────────────────── */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9em;
+  color: var(--navy);
+  margin: 56px 0 8px;
+  scroll-margin-top: 64px;
+}
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 0.95em;
+  margin-bottom: 24px;
+}
+
+/* ── DAY CARDS ──────────────────────── */
+.day-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.day-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.day-header {
+  padding: 16px 24px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.day-header.paris {
+  background: linear-gradient(135deg, var(--paris), var(--paris-accent));
+}
+.day-header.belgium {
+  background: linear-gradient(135deg, #b86e00, var(--belgium));
+}
+.day-header.london {
+  background: linear-gradient(135deg, #a01f1f, var(--london));
+}
+.day-header.travel {
+  background: linear-gradient(135deg, #37474f, var(--travel));
+}
+.day-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.15em;
+  font-weight: 700;
+}
+.day-header .day-tag {
+  font-size: 0.78em;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-weight: 500;
+}
+.day-body {
+  padding: 24px;
+}
+.day-body h4 {
+  font-size: 0.92em;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 18px 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.day-body h4:first-child {
+  margin-top: 0;
+}
+.day-body p,
+.day-body li {
+  font-size: 0.93em;
+  color: #374151;
+}
+.day-body ul {
+  padding-left: 20px;
+  margin: 6px 0 12px;
+}
+.day-body li {
+  margin-bottom: 4px;
+}
+.playground {
+  background: #f0fff4;
+  border-left: 4px solid #38a169;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 0.9em;
+}
+.playground .pg-title {
+  font-weight: 700;
+  color: #276749;
+  margin-bottom: 2px;
+}
+.tip {
+  background: #fffbeb;
+  border-left: 4px solid #d69e2e;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 0.9em;
+}
+.tip .tip-title {
+  font-weight: 700;
+  color: #975a16;
+  margin-bottom: 2px;
+}
+.transit {
+  background: #ebf8ff;
+  border-left: 4px solid #3182ce;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 0.9em;
+}
+.transit .transit-title {
+  font-weight: 700;
+  color: #2a4365;
+  margin-bottom: 2px;
+}
+
+/* ── BOOKING STRATEGY ───────────────── */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.strategy-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.strategy-card h4 {
+  font-family: "Playfair Display", serif;
+  color: var(--navy);
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+.strategy-card p {
+  font-size: 0.88em;
+  color: var(--text-light);
+}
+.strategy-card .when {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 10px;
+  display: inline-block;
+  background: var(--paris-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ── BUDGET TABLE ───────────────────── */
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.88em;
+}
+.budget-table th {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.budget-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.budget-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+.budget-table .total {
+  font-weight: 700;
+  background: var(--paris-light) !important;
+}
+
+/* ── FOOTER ─────────────────────────── */
+footer {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 40px 24px;
+  margin-top: 60px;
+  font-size: 0.85em;
+}
+footer .hearts {
+  font-size: 1.4em;
+  margin-bottom: 8px;
+}
+
+/* ── RESPONSIVE ─────────────────────── */
+@media (max-width: 640px) {
+  .hero {
+    padding: 60px 16px 40px;
+  }
+  .hero h1 {
+    font-size: 1.8em;
+  }
+  .section-hero img {
+    height: 220px;
+  }
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .day-body {
+    padding: 18px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .strategy-grid {
+    grid-template-columns: 1fr;
+  }
+}
