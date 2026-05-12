@@ -1,9 +1,12 @@
-const CACHE_NAME = "europe-trip-2026-v1";
+const CACHE_NAME = "europe-trip-2026-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./assets/icon.svg",
+  "./assets/paris-eiffel.jpg",
+  "./assets/disneyland-paris.jpg",
+  "./assets/barcelona.jpg",
 ];
 
 const toCacheUrl = (url) => new URL(url, self.registration.scope).href;
