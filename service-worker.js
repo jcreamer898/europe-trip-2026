@@ -1,7 +1,8 @@
-const CACHE_NAME = "europe-trip-2026-v2";
+const CACHE_NAME = "europe-trip-2026-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
+  "./service-worker.js",
   "./manifest.webmanifest",
   "./assets/icon.svg",
   "./assets/paris-eiffel.jpg",
