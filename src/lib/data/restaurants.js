@@ -61,5 +61,60 @@ export const barcelonaRestaurants = [
     name: "La Pepita",
     type: "Italian/Creative · Eixample",
     tip: "Gorgeous, Instagram-famous interior but genuinely great food. Sandwiches, pasta, and sharing plates. Great for lunch with the girls — fun atmosphere, kid-friendly."
+  },
+  {
+    name: "The Steak House",
+    type: "Brasserie · ★ 4.7",
+    tip: "Highly-rated brasserie-style steakhouse in Barcelona. A great option if you're craving a proper steak night."
+  },
+  {
+    name: "Ikibana Sarrià",
+    type: "Japanese · Sarrià · ★ 4.3",
+    tip: "Upscale Japanese-Mediterranean fusion in the leafy Sarrià neighborhood. Beautiful presentation — a nice change of pace from tapas."
+  },
+  {
+    name: "Granja M. Viader",
+    type: "Café · Gothic Quarter · ★ 4.4",
+    tip: "Historic cafeteria dating back to 1870. Famous for inventing Cacaolat (chocolate milk). Great for a mid-morning hot chocolate stop with the girls."
+  },
+  {
+    name: "Granja & Chocolateria La Nena",
+    type: "Chocolate Café · Gràcia · ★ 4.2",
+    tip: "Cozy neighborhood spot in Gràcia known for thick hot chocolate and homemade pastries. Board games on the shelves — very kid-friendly."
+  },
+  {
+    name: "El Bosc de Les Fades",
+    type: "Bar · Las Ramblas · ★ 4.4",
+    tip: "Fairy-tale themed bar near the wax museum — enchanted forest décor with trees, fountains, and fairies. The drinks are secondary to the atmosphere. The girls will love it."
+  },
+  {
+    name: "NÜA Smart Restaurant",
+    type: "Restaurant · ★ 4.4",
+    tip: "Modern, health-conscious restaurant with creative Mediterranean dishes. Good vegetarian options."
+  },
+  {
+    name: "Alice Secret Garden",
+    type: "Brunch · ★ 3.9",
+    tip: "Alice in Wonderland-themed brunch spot with whimsical décor. Fun for a family brunch — the girls will enjoy the themed atmosphere."
+  },
+  {
+    name: "Casa Alfonso",
+    type: "Restaurant · ★ 4.4",
+    tip: "Classic Barcelona eatery known for traditional Catalan fare. A solid, no-frills choice for authentic local food."
+  },
+  {
+    name: "La Flauta",
+    type: "Tapas · Rambla de Catalunya · ★ 4.5",
+    tip: "Popular tapas bar on Rambla de Catalunya. Known for flautas (crispy rolled tapas) and excellent montaditos. Walking distance from your Airbnb."
+  },
+  {
+    name: "Micu Maku",
+    type: "Mediterranean · ★ 4.7",
+    tip: "Top-rated Mediterranean restaurant with fresh, creative dishes. One of the highest-rated spots on the list."
+  },
+  {
+    name: "La Lolita Barcelona",
+    type: "Mediterranean/Halal · ★ 4.5",
+    tip: "Stylish spot with Mediterranean and halal options. Great for a sit-down dinner with diverse menu choices."
   }
 ];
