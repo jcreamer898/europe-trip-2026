@@ -5,7 +5,13 @@
 <div class="grid">
   {#each restaurants as restaurant}
     <article class="card">
-      <h3>{restaurant.name}</h3>
+      <h3>
+        {#if restaurant.maps}
+          <a href={restaurant.maps} target="_blank" rel="noopener noreferrer">{restaurant.name} 📍</a>
+        {:else}
+          {restaurant.name}
+        {/if}
+      </h3>
       <div class="type">{restaurant.type}</div>
       {#if restaurant.tip}
         <p class="tip">{@html restaurant.tip}</p>
@@ -33,6 +39,17 @@
     color: var(--navy);
     font-size: 1.05rem;
     line-height: 1.3;
+  }
+
+  h3 a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--muted);
+  }
+
+  h3 a:hover {
+    color: var(--accent, #2563eb);
+    border-bottom-style: solid;
   }
 
   .type {
