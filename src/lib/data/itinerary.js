@@ -1,3 +1,7 @@
+import parisEiffelImg from "/assets/paris-eiffel.jpg";
+import disneylandImg from "/assets/disneyland-paris.jpg";
+import barcelonaImg from "/assets/barcelona.jpg";
+
 export const parisDays = [
   {
     day: 1,
@@ -448,7 +452,7 @@ export const sections = [
     title: "🇫🇷 Paris",
     subtitle: "5 Nights · 4 Rue Armand Moisant, 75015 (Montparnasse) · Jun 2–7",
     image: {
-      src: "./assets/paris-eiffel.jpg",
+      src: parisEiffelImg,
       alt: "Eiffel Tower Paris",
       caption: "Eiffel Tower and Champ de Mars, Paris · Photo: Wikimedia Commons"
     },
@@ -465,7 +469,7 @@ export const sections = [
     title: "🎠 Disneyland Paris",
     subtitle: "2 Days · June 3–4 · RER A from Châtelet",
     image: {
-      src: "./assets/disneyland-paris.jpg",
+      src: disneylandImg,
       alt: "Disneyland Paris castle",
       caption: "Sleeping Beauty Castle, Disneyland Paris · Photo: Wikimedia Commons"
     },
@@ -496,7 +500,7 @@ export const sections = [
     title: "🇪🇸 Barcelona",
     subtitle: "5 Nights · Avinguda Diagonal 377, Eixample · Jun 7–12",
     image: {
-      src: "./assets/barcelona.jpg",
+      src: barcelonaImg,
       alt: "Barcelona Spain",
       caption: "Barcelona, Spain · Photo: Unsplash"
     },
