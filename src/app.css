@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --navy: #1b2a4a;
+  --blue: #2e5090;
+  --paris: #2563eb;
+  --paris-l: #eff6ff;
+  --bcn: #dc2626;
+  --bcn-l: #fef2f2;
+  --disney: #7c3aed;
+  --disney-l: #f5f3ff;
+  --travel: #374151;
+  --travel-l: #f9fafb;
+  --gaudi: #d97706;
+  --gaudi-l: #fffbeb;
+  --green: #16a34a;
+  --green-l: #f0fdf4;
+  --bg: #f8fafc;
+  --card: #fff;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --muted: #64748b;
+  --shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.11);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+}

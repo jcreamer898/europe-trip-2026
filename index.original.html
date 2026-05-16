@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1b2a4a" />
+    <title>Creamer Family — Paris + Barcelona 2026</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --navy: #1b2a4a;
+        --blue: #2e5090;
+        --paris: #2563eb;
+        --paris-l: #eff6ff;
+        --bcn: #dc2626;
+        --bcn-l: #fef2f2;
+        --disney: #7c3aed;
+        --disney-l: #f5f3ff;
+        --travel: #374151;
+        --travel-l: #f9fafb;
+        --gaudi: #d97706;
+        --gaudi-l: #fffbeb;
+        --green: #16a34a;
+        --green-l: #f0fdf4;
+        --bg: #f8fafc;
+        --card: #fff;
+        --border: #e2e8f0;
+        --text: #1e293b;
+        --muted: #64748b;
+        --shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+        --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.11);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        font-size: 15px;
+      }
+      .offline-banner {
+        position: fixed;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        z-index: 100;
+        display: none;
+        background: #fffbeb;
+        border: 1px solid #f59e0b;
+        border-radius: 12px;
+        box-shadow: var(--shadow-lg);
+        color: #78350f;
+        padding: 10px 16px;
+        text-align: center;
+        font-size: 0.85em;
+        font-weight: 700;
+      }
+      .offline-banner.show {
+        display: block;
+      }
+
+      /* HERO */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1b2a4a 45%,
+          #1d4ed8 100%
+        );
+        color: #fff;
+        padding: 80px 24px 64px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 70% 50%,
+          rgba(220, 38, 38, 0.18) 0%,
+          transparent 60%
+        );
+      }
+      .hero * {
+        position: relative;
+      }
+      .hero h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
+      .hero p {
+        font-size: 1.1em;
+        opacity: 0.85;
+        margin-bottom: 28px;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .badges {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .badge {
+        background: rgba(255, 255, 255, 0.13);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 99px;
+        padding: 7px 18px;
+        font-size: 0.85em;
+        font-weight: 500;
+      }
+
+      /* NAV */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+      }
+      .nav ul {
+        list-style: none;
+        display: flex;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 12px;
+      }
+      .nav a {
+        display: block;
+        padding: 13px 15px;
+        text-decoration: none;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: var(--muted);
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+        transition: 0.2s;
+      }
+      .nav a:hover {
+        color: var(--blue);
+        border-color: var(--blue);
+      }
+
+      /* LAYOUT */
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .sec-title {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.75em;
+        color: var(--navy);
+        margin: 52px 0 6px;
+        scroll-margin-top: 56px;
+      }
+      .sec-sub {
+        color: var(--muted);
+        font-size: 0.9em;
+        margin-bottom: 20px;
+      }
+
+      /* HERO IMAGES */
+      .img-wrap {
+        border-radius: 14px;
+        overflow: hidden;
+        margin: 20px 0;
+        box-shadow: var(--shadow);
+        position: relative;
+        height: 340px;
+      }
+      .img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s;
+      }
+      .img-wrap:hover img {
+        transform: scale(1.04);
+      }
+      .img-cap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        color: #fff;
+        padding: 36px 18px 12px;
+        font-size: 0.78em;
+      }
+
+      /* WARNING BANNER */
+      .warn {
+        background: #fef2f2;
+        border: 2px solid #dc2626;
+        border-radius: 12px;
+        padding: 18px 22px;
+        margin: 20px 0;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .warn .icon {
+        font-size: 1.6em;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .warn h4 {
+        color: #991b1b;
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .warn p {
+        color: #7f1d1d;
+        font-size: 0.88em;
+        line-height: 1.5;
+      }
+
+      /* INFO CARDS */
+      .booking-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 14px;
+        margin: 20px 0;
+      }
+      .b-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .b-card .label {
+        font-size: 0.72em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .b-card .value {
+        font-size: 1em;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 4px;
+      }
+      .b-card .sub {
+        font-size: 0.82em;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+      .b-card .conf {
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 0.75em;
+        font-weight: 700;
+        color: var(--green);
+        background: var(--green-l);
+        padding: 3px 10px;
+        border-radius: 99px;
+      }
+
+      /* DAY CARDS */
+      .day {
+        background: var(--card);
+        border-radius: 14px;
+        margin-bottom: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: 0.2s;
+      }
+      .day:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+      .day-hd {
+        padding: 15px 22px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .day-hd.paris {
+        background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+      }
+      .day-hd.bcn {
+        background: linear-gradient(135deg, #b91c1c, #ef4444);
+      }
+      .day-hd.disney {
+        background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+      }
+      .day-hd.travel {
+        background: linear-gradient(135deg, #374151, #6b7280);
+      }
+      .day-hd.gaudi {
+        background: linear-gradient(135deg, #b45309, #f59e0b);
+      }
+      .day-hd h3 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.1em;
+        font-weight: 700;
+      }
+      .day-hd .tag {
+        font-size: 0.75em;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 99px;
+        padding: 4px 13px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .day-bd {
+        padding: 22px;
+      }
+      .day-bd h4 {
+        font-size: 0.78em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--muted);
+        margin: 16px 0 6px;
+      }
+      .day-bd h4:first-child {
+        margin-top: 0;
+      }
+      .day-bd p,
+      .day-bd li {
+        font-size: 0.9em;
+        color: #374151;
+        line-height: 1.6;
+      }
+      .day-bd ul {
+        padding-left: 18px;
+        margin: 4px 0 10px;
+      }
+      .day-bd li {
+        margin-bottom: 3px;
+      }
+
+      /* CALLOUT BOXES */
+      .box {
+        border-radius: 0 10px 10px 0;
+        padding: 12px 16px;
+        margin: 12px 0;
+        font-size: 0.88em;
+      }
+      .box-green {
+        background: var(--green-l);
+        border-left: 4px solid var(--green);
+      }
+      .box-green .bt {
+        font-weight: 700;
+        color: #15803d;
+        margin-bottom: 2px;
+      }
+      .box-yellow {
+        background: var(--gaudi-l);
+        border-left: 4px solid var(--gaudi);
+      }
+      .box-yellow .bt {
+        font-weight: 700;
+        color: #92400e;
+        margin-bottom: 2px;
+      }
+      .box-blue {
+        background: var(--paris-l);
+        border-left: 4px solid var(--paris);
+      }
+      .box-blue .bt {
+        font-weight: 700;
+        color: #1d4ed8;
+        margin-bottom: 2px;
+      }
+      .box-red {
+        background: var(--bcn-l);
+        border-left: 4px solid var(--bcn);
+      }
+      .box-red .bt {
+        font-weight: 700;
+        color: #991b1b;
+        margin-bottom: 2px;
+      }
+      .box-purple {
+        background: var(--disney-l);
+        border-left: 4px solid #7c3aed;
+      }
+      .box-purple .bt {
+        font-weight: 700;
+        color: #5b21b6;
+        margin-bottom: 2px;
+      }
+
+      /* RESTAURANT TABLE */
+      .resto-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 12px;
+        margin: 16px 0;
+      }
+      .resto {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px;
+      }
+      .resto .rname {
+        font-weight: 700;
+        color: var(--navy);
+        font-size: 0.95em;
+      }
+      .resto .rtype {
+        font-size: 0.78em;
+        color: var(--muted);
+        margin: 2px 0 6px;
+      }
+      .resto .rtip {
+        font-size: 0.82em;
+        color: #374151;
+      }
+
+      /* BUDGET TABLE */
+      .budget-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88em;
+        margin: 16px 0;
+      }
+      .budget-table th {
+        background: var(--navy);
+        color: #fff;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 600;
+      }
+      .budget-table td {
+        padding: 9px 14px;
+        border-bottom: 1px solid var(--border);
+      }
+      .budget-table tr:nth-child(even) td {
+        background: #f8fafc;
+      }
+      .budget-table .total td {
+        font-weight: 700;
+        background: var(--paris-l) !important;
+        color: var(--navy);
+      }
+      .budget-table .grand td {
+        font-weight: 700;
+        background: var(--navy) !important;
+        color: #fff;
+        font-size: 1em;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.65);
+        text-align: center;
+        padding: 36px 20px;
+        margin-top: 60px;
+        font-size: 0.84em;
+      }
+      footer .em {
+        font-size: 1.4em;
+        margin-bottom: 8px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 600px) {
+        .hero {
+          padding: 52px 16px 40px;
+        }
+        .img-wrap {
+          height: 210px;
+        }
+        .day-hd {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .wrap {
+          padding: 0 14px;
+        }
+        .booking-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="offline-banner" role="status" aria-live="polite">
+      Offline mode: showing your saved itinerary. External links may not open
+      until signal returns.
+    </div>
+
+    <header class="hero">
+      <h1>The Creamer Family<br />Paris + Barcelona 2026</h1>
+      <p>
+        June 1–12 · 12 Days · 2 Countries · 4 Creamers (+ the Nugents on the
+        train!)
+      </p>
+      <div class="badges">
+        <span class="badge">✈️ Nashville → Paris</span>
+        <span class="badge">🗼 5 Nights Paris</span>
+        <span class="badge">🚄 TGV 06:42</span>
+        <span class="badge">🇪🇸 5 Nights Barcelona</span>
+        <span class="badge">✈️ Barcelona → Nashville</span>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#bookings">Bookings</a></li>
+        <li><a href="#paris">Paris</a></li>
+        <li><a href="#disney">Disney</a></li>
+        <li><a href="#versailles">Versailles</a></li>
+        <li><a href="#train">The Train</a></li>
+        <li><a href="#barcelona">Barcelona</a></li>
+        <li><a href="#food">Food Guide</a></li>
+        <li><a href="#budget">Budget</a></li>
+      </ul>
+    </nav>
+
+    <main class="wrap">
+      <!-- ═══ CONFIRMED BOOKINGS ═══ -->
+      <h2 class="sec-title" id="bookings">📋 Confirmed Bookings</h2>
+      <p class="sec-sub">
+        Everything locked in — confirmation numbers and key details
+      </p>
+
+      <div class="booking-grid">
+        <div class="b-card">
+          <div class="label">✈️ Delta Flights</div>
+          <div class="value">Conf# G9BB2X</div>
+          <div class="sub">
+            Jun 1: BNA→ATL (DL3142 2:47PM) → CDG (DL8703 8:05PM, arrives Jun 2
+            10:35AM)<br />Jun 12: BCN→ATL (DL195 11AM) → BNA (DL1490 6:30PM,
+            arrives 6:52PM)
+          </div>
+          <span class="conf">✅ Confirmed · $1,287.93/person</span>
+        </div>
+        <div class="b-card">
+          <div class="label">🏠 Paris Airbnb</div>
+          <div class="value"><a href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMS4SWE2D5" target="_blank" rel="noopener">Conf# HMS4SWE2D5</a></div>
+          <div class="sub">
+            4 Rue Armand Moisant, 75015 Paris<br />Cozy flat w/ Jacuzzi · 2BR
+            2WC · Host: Baudouin<br />Jun 2–7 · 5 nights · $477.61/night
+          </div>
+          <span class="conf">✅ Confirmed · $2,757.34 total</span>
+        </div>
+        <div class="b-card">
+          <div class="label">🏠 Barcelona Airbnb</div>
+          <div class="value"><a href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMX9ER8FEP" target="_blank" rel="noopener">Conf# HMX9ER8FEP</a></div>
+          <div class="sub">
+            Avinguda Diagonal 377, Eixample<br />Sweett Palau Atic · Host:
+            Sweett<br />Jun 7–12 · 5 nights · Early bird -$778 applied
+          </div>
+          <span class="conf">✅ Confirmed · $3,194.75 total</span>
+        </div>
+        <div class="b-card">
+          <div class="label">🚆 TGV Paris → Barcelona</div>
+          <div class="value">Conf# 8K9GR2</div>
+          <div class="sub">
+            TGV INOUI 9711 · Jun 7 · 6 passengers<br />Jonathan, Lynnsey,
+            Hadley, Everly,<br />Donald &amp; Karen Nugent · €644 total
+          </div>
+          <span class="conf">✅ Confirmed · ⚠️ Departs 06:42</span>
+        </div>
+        <div class="b-card">
+          <div class="label">🎡 Sagrada Família</div>
+          <div class="value">Tickets In Hand</div>
+          <div class="sub">
+            Family of 4 · Tower access included<br />Monday June 8
+          </div>
+          <span class="conf">✅ Confirmed · ~$195</span>
+        </div>
+      </div>
+
+      <div class="warn">
+        <div class="icon">🚨</div>
+        <div>
+          <h4>Train Alert — June 7 · TGV 9711 · Departs 06:42</h4>
+          <p>
+            Platform at Gare de Lyon closes at <strong>06:40</strong> — zero
+            buffer. Your Airbnb at 4 Rue Armand Moisant (15th arr.) is a
+            20-minute taxi ride away.
+            <strong
+              >Leave the apartment by 05:45 AM. Book your taxi the night
+              before.</strong
+            >
+            Do NOT take the metro at that hour — first trains won't even be
+            running. All 6 passengers must be present: Jonathan, Lynnsey,
+            Hadley, Everly, Donald &amp; Karen.
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ PARIS ═══ -->
+      <h2 class="sec-title" id="paris">🇫🇷 Paris</h2>
+      <p class="sec-sub">
+        5 Nights · 4 Rue Armand Moisant, 75015 (Montparnasse) · Jun 2–7
+      </p>
+
+      <div class="img-wrap">
+        <img
+          src="./assets/paris-eiffel.jpg"
+          alt="Eiffel Tower Paris"
+          loading="lazy"
+        />
+        <div class="img-cap">
+          Eiffel Tower and Champ de Mars, Paris · Photo: Wikimedia Commons
+        </div>
+      </div>
+
+      <div class="box box-yellow">
+        <div class="bt">📍 Your Neighborhood: Montparnasse (15th arr.)</div>
+        This is actually a great base — very local, not touristy.
+        <strong>Rue du Montparnasse</strong> is lined with crêperies (it's the
+        crêpe street of Paris — seriously, 20+ in a row). The big Montparnasse
+        train station is walkable for the RER to Versailles and Disneyland.
+        Bonus: the famous <strong>Le Relais de l'Entrecôte</strong> (steak
+        frites) has a location nearby on Blvd du Montparnasse.
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day">
+        <div class="day-hd paris">
+          <h3>Day 1 in Paris — Tuesday, June 2</h3>
+          <span class="tag">Arrival Day</span>
+        </div>
+        <div class="day-bd">
+          <h4>Getting In</h4>
+          <div class="box box-blue">
+            <div class="bt">🚆 CDG → Paris: RER B to Montparnasse</div>
+            RER B to Denfert-Rochereau, then short metro to Montparnasse (~45
+            min total, ~€12/adult). Or grab an Uber from CDG (~€45-60, much
+            easier with luggage after an overnight flight).
+          </div>
+          <h4>Afternoon — Settle In</h4>
+          <ul>
+            <li>
+              Check into your flat on Rue Armand Moisant, unpack, freshen up
+            </li>
+            <li>
+              Walk Rue du Montparnasse — grab your first crêpes and café crème
+            </li>
+            <li>Stock up at the nearby Monoprix for breakfast supplies</li>
+          </ul>
+          <h4>Evening — Eiffel Tower + Champs-Élysées</h4>
+          <ul>
+            <li>
+              Metro to <strong>Trocadéro</strong> for the best Eiffel Tower view
+              (across the water)
+            </li>
+            <li>
+              Walk over to the tower — tick the summit or just enjoy it lit up
+              at dusk
+            </li>
+            <li>
+              Stroll the <strong>Champs-Élysées</strong> east toward the Arc de
+              Triomphe
+            </li>
+            <li>
+              Dinner near the tower or back in the neighborhood — keep it easy,
+              you're jet-lagged
+            </li>
+          </ul>
+          <div class="box box-green">
+            <div class="bt">🛝 Playground: Champ de Mars</div>
+            Right at the base of the Eiffel Tower. Great equipment, soft-surface
+            ground. The girls can run off the plane energy while you watch the
+            tower turn gold at sunset.
+          </div>
+        </div>
+      </div>
+
+      <!-- Days 3-4: Disney -->
+      <h2 class="sec-title" id="disney">🎠 Disneyland Paris</h2>
+      <p class="sec-sub">2 Days · June 3–4 · RER A from Châtelet</p>
+
+      <div class="img-wrap">
+        <img
+          src="./assets/disneyland-paris.jpg"
+          alt="Disneyland Paris castle"
+          loading="lazy"
+        />
+        <div class="img-cap">
+          Sleeping Beauty Castle, Disneyland Paris · Photo: Wikimedia Commons
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-hd disney">
+          <h3>Day 2 — Wednesday, June 3</h3>
+          <span class="tag">Disneyland Park</span>
+        </div>
+        <div class="day-bd">
+          <div class="box box-blue">
+            <div class="bt">
+              🚆 Getting There: RER A from Châtelet → Marne-la-Vallée/Chessy
+              (~40 min)
+            </div>
+            Covered by Navigo weekly pass (all zones). Without pass:
+            ~€8-10/person each way. Trains run frequently — leave by 8:30 AM to
+            beat the crowds.
+          </div>
+          <h4>Must-Do: Disneyland Park</h4>
+          <ul>
+            <li>
+              <strong>Big Thunder Mountain</strong> — the whole family, no
+              debate
+            </li>
+            <li>
+              <strong>Pirates of the Caribbean</strong> — classic and long
+            </li>
+            <li>
+              <strong>Peter Pan's Flight</strong> — hit this FIRST, lines grow
+              fast
+            </li>
+            <li>
+              <strong>Buzz Lightyear Laser Blast</strong> — competitive scoring,
+              the girls will love it
+            </li>
+            <li><strong>Hyperspace Mountain</strong> — for Hadley (11)</li>
+            <li>
+              <strong>It's a Small World</strong> — underrated, especially the
+              European version
+            </li>
+          </ul>
+          <div class="box box-purple">
+            <div class="bt">💡 Strategy</div>
+            Download the Disneyland Paris app for live wait times. Head to
+            Fantasyland (Peter Pan, Small World) the moment gates open. Parade
+            mid-afternoon. Evening show + castle lighting — worth staying for.
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-hd disney">
+          <h3>Day 3 — Thursday, June 4</h3>
+          <span class="tag">Disney Adventure World</span>
+        </div>
+        <div class="day-bd">
+          <h4>Disney Adventure World (formerly Walt Disney Studios)</h4>
+          <ul>
+            <li>
+              <strong>🌊 World of Frozen</strong> — brand new for 2026, go
+              straight here at park opening
+            </li>
+            <li>
+              <strong>Ratatouille: The Adventure</strong> — shrink to rat-size
+              in Gusteau's kitchen
+            </li>
+            <li>
+              <strong>Avengers Campus</strong> — Spider-Man W.E.B. Adventure +
+              character meets
+            </li>
+            <li><strong>Cars Road Trip</strong> — great for Everly (7)</li>
+          </ul>
+          <div class="box box-purple">
+            <div class="bt">🌊 World of Frozen Alert</div>
+            This is brand new and Everly will lose her mind. Arrive at park
+            opening and go straight there before anyone else figures out the
+            same thing. Lines will be long all day.
+          </div>
+          <h4>Evening</h4>
+          <p>
+            Disney Village dinner (Earl of Sandwich is solid), then RER A back
+            to Paris. The girls will be asleep before you hit Châtelet.
+          </p>
+        </div>
+      </div>
+
+      <!-- Day 5: Versailles + Latin Quarter -->
+      <h2 class="sec-title" id="versailles">🏛️ Versailles + Latin Quarter</h2>
+      <p class="sec-sub">Friday, June 5</p>
+
+      <div class="day">
+        <div class="day-hd paris">
+          <h3>Day 4 — Friday, June 5</h3>
+          <span class="tag">Versailles AM · Latin Quarter PM</span>
+        </div>
+        <div class="day-bd">
+          <h4>Morning: Palace of Versailles</h4>
+          <div class="box box-blue">
+            <div class="bt">
+              🚆 RER C from Invalides → Versailles-Rive Gauche (~35 min)
+            </div>
+            Book your timed entry in advance at chateauversailles.fr.
+            ~€21/adult. Kids under 18 are FREE. Head straight to the Hall of
+            Mirrors — it fills up fast.
+          </div>
+          <ul>
+            <li><strong>Hall of Mirrors</strong> — absolutely unmissable</li>
+            <li>
+              <strong>The Gardens</strong> — massive, beautiful, and the girls
+              can run free
+            </li>
+            <li>
+              <strong>Marie Antoinette's Estate</strong> — quieter, more
+              intimate, highly recommended
+            </li>
+          </ul>
+          <h4>Afternoon: Latin Quarter</h4>
+          <ul>
+            <li>
+              Back on the RER — metro to
+              <strong>Saint-Michel / Notre-Dame</strong>
+            </li>
+            <li>
+              Walk the Latin Quarter streets — Shakespeare &amp; Company
+              bookshop
+            </li>
+            <li>Crêpes on Rue de la Huchette or Rue Mouffetard</li>
+            <li>
+              <strong>Jardin des Plantes</strong> — beautiful botanical garden,
+              great for the girls to roam
+            </li>
+          </ul>
+          <div class="box box-green">
+            <div class="bt">🛝 Playground: Jardin des Plantes</div>
+            The garden has a wonderful enclosed playground area. Perfect
+            afternoon stop after a big morning at Versailles. Also has a small
+            zoo (Ménagerie) — ~€15/adult, ~€12 kids.
+          </div>
+          <h4>Evening</h4>
+          <div class="box box-yellow">
+            <div class="bt">🍽️ Dinner Reservation — 19:30</div>
+            <a href="https://maps.app.goo.gl/LMupgvFHxwNZeMFaA"
+              >Brasserie Dubillot</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 6: Latin Quarter + Steak Frites -->
+      <div class="day">
+        <div class="day-hd paris">
+          <h3>Day 5 — Saturday, June 6</h3>
+          <span class="tag">Latin Quarter · Steak Frites Night</span>
+        </div>
+        <div class="day-bd">
+          <h4>Morning</h4>
+          <ul>
+            <li>
+              Slow morning — baguette and café from the corner boulangerie
+            </li>
+            <li>
+              Walk to <strong>Luxembourg Gardens</strong> — rent toy sailboats
+              for the fountain (~€5), world-class playground at Le Ludo Jardin
+              (zipline, climbing structures, puppet theater)
+            </li>
+          </ul>
+          <h4>Afternoon</h4>
+          <ul>
+            <li>
+              Wander <strong>Saint-Germain-des-Prés</strong> — browse the
+              galleries and boutiques
+            </li>
+            <li>
+              Île Saint-Louis for the best ice cream in Paris:
+              <strong>Berthillon</strong>
+            </li>
+            <li>Notre-Dame exterior — see the ongoing restoration up close</li>
+            <li>Walk along the Seine, cross the Pont des Arts</li>
+          </ul>
+          <h4>🥩 Steak Frites Dinner</h4>
+          <div class="box box-yellow">
+            <div class="bt">
+              Le Relais de l'Entrecôte — No reservation needed
+            </div>
+            There's one on Blvd du Montparnasse, walking distance from your
+            Airbnb. One menu only: walnut salad, then unlimited steak frites
+            with their secret sauce. Show up when they open (7PM) or expect a
+            queue. Kids love it — unlimited fries. Bring cash as backup.
+          </div>
+          <div class="box box-green">
+            <div class="bt">
+              🛝 Playground: Luxembourg Gardens — Le Ludo Jardin
+            </div>
+            One of the best playgrounds in Europe. Zipline, climbing frames,
+            sandbox, puppet theater. Entry ~€3/child. Hadley and Everly will
+            want to stay all day.
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAIN DAY -->
+      <h2 class="sec-title" id="train">🚄 The Train to Barcelona</h2>
+      <p class="sec-sub">Sunday, June 7 · TGV INOUI 9711 · Conf# 8K9GR2</p>
+
+      <div class="warn">
+        <div class="icon">⏰</div>
+        <div>
+          <h4>05:45 AM — Leave Apartment. No Exceptions.</h4>
+          <p>
+            Your train departs <strong>Gare de Lyon at 06:42</strong>. Platform
+            closes at 06:40. Taxi from 4 Rue Armand Moisant = ~20 minutes.
+            <strong>Book your taxi the night before.</strong> Uber/G7 Taxi both
+            work. First metro of the day doesn't run early enough — taxi only.
+            All 6 passengers: Jonathan, Lynnsey, Hadley, Everly, Donald &amp;
+            Karen Nugent.
+          </p>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-hd travel">
+          <h3>Day 6 — Sunday, June 7</h3>
+          <span class="tag">Paris → Barcelona · TGV 06:42</span>
+        </div>
+        <div class="day-bd">
+          <h4>Pre-Dawn</h4>
+          <ul>
+            <li>Set two alarms. Pack bags the night before.</li>
+            <li>Taxi already booked — doors open at 05:45 AM sharp</li>
+            <li>
+              Grab a pain au chocolat from the station — Gare de Lyon has a Paul
+              bakery open early
+            </li>
+          </ul>
+          <h4>The Journey (~6.5 hours)</h4>
+          <ul>
+            <li>TGV INOUI 9711: Paris Gare de Lyon → Barcelona Sants</li>
+            <li>
+              Arrives approximately <strong>13:15</strong> Barcelona time (same
+              time zone in June)
+            </li>
+            <li>
+              Bring snacks, download movies for the kids, enjoy the Pyrenees
+              scenery
+            </li>
+          </ul>
+          <h4>Afternoon: Barcelona Arrival</h4>
+          <ul>
+            <li>
+              Check into
+              <strong>Sweett Palau Atic, Avinguda Diagonal 377</strong> —
+              Eixample neighborhood
+            </li>
+            <li>
+              The Eixample is Barcelona's elegant grid district — wide
+              boulevards, gorgeous architecture
+            </li>
+            <li>
+              Short walk or metro to the
+              <strong>Gothic Quarter (Barri Gòtic)</strong> — wander the
+              medieval lanes
+            </li>
+            <li>First tapas dinner in Barcelona! See food guide below</li>
+          </ul>
+          <div class="box box-yellow">
+            <div class="bt">📍 Your Neighborhood: Eixample</div>
+            Avinguda Diagonal 377 puts you right in the heart of upscale
+            Barcelona. Passeig de Gràcia (Barcelona's Champs-Élysées) is a short
+            walk — Gaudí's Casa Batlló and Casa Milà (La Pedrera) are right
+            there. Great metro connections. Cerveceria Catalana and Tapas 24 are
+            walking distance.
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ BARCELONA ═══ -->
+      <h2 class="sec-title" id="barcelona">🇪🇸 Barcelona</h2>
+      <p class="sec-sub">
+        5 Nights · Avinguda Diagonal 377, Eixample · Jun 7–12
+      </p>
+
+      <div class="img-wrap">
+        <img
+          src="./assets/barcelona.jpg"
+          alt="Barcelona Spain"
+          loading="lazy"
+        />
+        <div class="img-cap">Barcelona, Spain · Photo: Unsplash</div>
+      </div>
+
+      <!-- Day 8: Sagrada -->
+      <div class="day">
+        <div class="day-hd bcn">
+          <h3>Day 7 — Monday, June 8</h3>
+          <span class="tag">Sagrada Família · El Born</span>
+        </div>
+        <div class="day-bd">
+          <h4>Morning: Sagrada Família</h4>
+          <ul>
+            <li>
+              Tickets already booked ✅ — arrive at your timed slot, don't be
+              late
+            </li>
+            <li>
+              Towers included — take the Nativity Tower for sunrise views over
+              the city
+            </li>
+            <li>
+              Gaudí designed this to take 200 years to build; it's still ongoing
+              and stunning
+            </li>
+            <li>
+              Spend 2-2.5 hours minimum — the interior light through the stained
+              glass is extraordinary
+            </li>
+          </ul>
+          <div class="box box-yellow">
+            <div class="bt">💡 Gaudí Centenary — June 10</div>
+            June 10, 2026 is the
+            <strong>100th anniversary of Antoni Gaudí's death</strong>. You'll
+            be in Barcelona for one of the most significant cultural events in
+            the city's recent history. Expect special events, exhibitions, and
+            massive crowds at all Gaudí sites. Book Park Güell timed entry NOW.
+          </div>
+          <h4>Afternoon: El Born + Gothic Quarter</h4>
+          <ul>
+            <li>
+              <strong>Mercat de Santa Caterina</strong> — colorful mosaic roof,
+              beautiful market, less touristy than Boqueria
+            </li>
+            <li>
+              Wander <strong>El Born</strong> neighborhood — boutiques, coffee,
+              the best tapas bars
+            </li>
+            <li>
+              <strong>Basílica de Santa Maria del Mar</strong> — stunning Gothic
+              church, free entry
+            </li>
+            <li>Evening pintxos crawl in El Born</li>
+          </ul>
+          <div class="box box-blue">
+            <div class="bt">🚇 Barcelona Metro</div>
+            Get a <strong>T-Casual card</strong> (10 trips, ~€11.35, shareable).
+            Kids under 4 free. Sagrada Família = stop "Sagrada Família" on
+            L2/L5.
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 9: Tibidabo -->
+      <div class="day">
+        <div class="day-hd bcn">
+          <h3>Day 8 — Tuesday, June 9</h3>
+          <span class="tag">Tibidabo · Bunkers del Carmel</span>
+        </div>
+        <div class="day-bd">
+          <h4>Morning: Tibidabo Amusement Park</h4>
+          <ul>
+            <li>
+              Europe's oldest amusement park, on a hill overlooking all of
+              Barcelona
+            </li>
+            <li>
+              Views are spectacular — you can see the whole city and the sea
+            </li>
+            <li>
+              Vintage rides + modern attractions — Hadley and Everly will love
+              the mix
+            </li>
+            <li>
+              Check opening days at tibidabo.cat — sometimes closed Tuesday in
+              shoulder season
+            </li>
+            <li>
+              Getting there: FGC train from Plaça Catalunya to Peu del
+              Funicular, then funicular up
+            </li>
+          </ul>
+          <div class="box box-green">
+            <div class="bt">🛝 Tibidabo = Giant Playground</div>
+            This is essentially an amusement park on a mountaintop. The girls
+            are going to think it's the coolest thing they've ever seen. Budget
+            4-5 hours.
+          </div>
+          <h4>Evening: Bunkers del Carmel</h4>
+          <ul>
+            <li>
+              Anti-aircraft bunkers from the Civil War era, now Barcelona's best
+              free viewpoint
+            </li>
+            <li>
+              360° panoramic views of the entire city, sea, and mountains at
+              sunset
+            </li>
+            <li>
+              Bring a picnic — locals come here at dusk with wine and snacks
+            </li>
+            <li>
+              ~20 min taxi from Tibidabo or metro to El Carmel + short hike
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Day 10: Gaudí Centenary -->
+      <div class="day">
+        <div class="day-hd gaudi">
+          <h3>Day 9 — Wednesday, June 10 🎉</h3>
+          <span class="tag">GAUDÍ CENTENARY · Park Güell · Beach</span>
+        </div>
+        <div class="day-bd">
+          <div class="box box-yellow">
+            <div class="bt">
+              🎉 June 10, 2026 — 100th Anniversary of Gaudí's Death
+            </div>
+            This is a massive cultural milestone for Barcelona. Expect special
+            exhibitions, free entry periods, live music, and city-wide events.
+            Check visitbarcelona.com for the official program. Your Sagrada
+            Família visit was yesterday — perfect timing.
+          </div>
+          <h4>Morning: Park Güell</h4>
+          <ul>
+            <li>
+              Book timed entry in advance at parkguell.barcelona (~€10/adult,
+              Everly may be free under 7)
+            </li>
+            <li>
+              Gaudí's mosaic terrace, gingerbread gatehouses, and forested
+              walking paths
+            </li>
+            <li>
+              Go early — it will be extra crowded today given the centenary
+            </li>
+            <li>
+              The Monumental Zone is ticketed; the surrounding park is free and
+              worth exploring
+            </li>
+          </ul>
+          <h4>Afternoon: Barceloneta Beach Day 🏖️</h4>
+          <ul>
+            <li>
+              Metro L4 to <strong>Barceloneta</strong> — 5 minutes from the city
+              center to the beach
+            </li>
+            <li>
+              Rent sunbeds and umbrella (~€12-15 for two), swim, build
+              sandcastles
+            </li>
+            <li>
+              The girls will be in heaven — Mediterranean water in June is warm
+              (~22°C)
+            </li>
+            <li>
+              Walk the Barceloneta promenade — outdoor showers, ice cream
+              kiosks, beach bars
+            </li>
+          </ul>
+          <div class="box box-blue">
+            <div class="bt">🍽️ Beach Lunch: Jai Ca</div>
+            Classic Barceloneta tavern right by the beach. Order the gambas al
+            ajillo (garlic prawns), patatas bravas, and croquetas. Very local,
+            very good. Cash preferred.
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 11: Montjuic + Magic Fountains or Sitges -->
+      <div class="day">
+        <div class="day-hd bcn">
+          <h3>Day 10 — Thursday, June 11</h3>
+          <span class="tag">Montjuic · Magic Fountains · or Sitges</span>
+        </div>
+        <div class="day-bd">
+          <h4>Option A: Montjuic Day + Magic Fountains Evening</h4>
+          <ul>
+            <li>
+              <strong>Montjuic Cable Car</strong> (Teleféric de Montjuïc) —
+              sweeping views over the port (~€15/person round trip)
+            </li>
+            <li>
+              <strong>Castell de Montjuïc</strong> — old fortress at the summit,
+              great views, free entry to grounds
+            </li>
+            <li>
+              <strong>Fundació Joan Miró</strong> — world-class modern art
+              museum on Montjuic (~€15/adult)
+            </li>
+            <li>
+              <strong>Olympic Stadium</strong> — free to walk around, nice views
+            </li>
+          </ul>
+          <div class="box box-green">
+            <div class="bt">⛲ Magic Fountains of Montjuic — FREE</div>
+            June–September: Thursday–Sunday evenings, ~9:30–10:30 PM.
+            Spectacular water, light, and music show at the foot of Montjuic.
+            End your Montjuic day here — sit on the steps of the MNAC with the
+            city glittering behind you.
+          </div>
+          <h4>Option B: Sitges Day Trip 🏖️</h4>
+          <div class="box box-blue">
+            <div class="bt">
+              🚆 Train: Barcelona Sants → Sitges (~35 min, ~€4.50/person)
+            </div>
+            Sitges is a gorgeous whitewashed beach town 35km southwest of
+            Barcelona. Quieter than Barceloneta, beautiful old town, clear
+            water. Great day trip especially with kids. Trains run every 20-30
+            minutes.
+          </div>
+          <ul>
+            <li>
+              Church of Sant Bartomeu overlooking the sea — iconic photo spot
+            </li>
+            <li>
+              Long sandy beach — calmer, cleaner, and less crowded than
+              Barceloneta
+            </li>
+            <li>
+              Great seafood restaurants on the promenade — paella for lunch
+            </li>
+            <li>Wander the old town streets — boutiques, ice cream, churros</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Day 12: Fly home -->
+      <div class="day">
+        <div class="day-hd travel">
+          <h3>Day 11 — Friday, June 12</h3>
+          <span class="tag">Fly Home · BCN → ATL → BNA</span>
+        </div>
+        <div class="day-bd">
+          <h4>Morning</h4>
+          <ul>
+            <li>
+              DL195 departs Barcelona El Prat at <strong>11:00 AM</strong>
+            </li>
+            <li>
+              Leave apartment by <strong>8:30 AM</strong> — allow 30 min to
+              airport + 90 min for international check-in
+            </li>
+            <li>
+              Taxi or Aerobus from Plaça de Catalunya (~€6/person, ~35 min) or
+              taxi (~€35 flat rate)
+            </li>
+            <li>
+              Quick coffee and one last <em>croissant de mantequilla</em> at the
+              airport
+            </li>
+          </ul>
+          <h4>The Journey Home</h4>
+          <ul>
+            <li>BCN → ATL: DL195, arrives Atlanta 3:08 PM</li>
+            <li>ATL → BNA: DL1490 6:30 PM, arrives Nashville 6:52 PM</li>
+            <li>
+              Back in Tennessee by dinner time — with a suitcase full of
+              memories and chocolate
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ═══ FOOD GUIDE ═══ -->
+      <h2 class="sec-title" id="food">🍽️ Food Guide</h2>
+      <p class="sec-sub">Where to eat — Paris and Barcelona recommendations</p>
+
+      <h3 style="font-size: 1.1em; color: var(--navy); margin: 20px 0 12px">
+        🥐 Paris
+      </h3>
+      <div class="resto-grid">
+        <div class="resto">
+          <div class="rname">Le Relais de l'Entrecôte</div>
+          <div class="rtype">Steak Frites · Montparnasse</div>
+          <div class="rtip">
+            No reservations. One menu only — walnut salad, unlimited steak
+            frites with secret sauce. Go when they open (7PM). Walking distance
+            from your Airbnb. <strong>This is your steak frites night.</strong>
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Crêperies on Rue du Montparnasse</div>
+          <div class="rtype">Crêpes · 2 min from Airbnb</div>
+          <div class="rtip">
+            20+ crêperies on one street. This is the crêpe capital of Paris —
+            Breton-style buckwheat galettes for dinner, sweet crêpes for
+            dessert. Try Crêperie Josselin or Crêperie Bretonne Fleurie.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Du Pain et des Idées</div>
+          <div class="rtype">Bakery · 10th arr.</div>
+          <div class="rtip">
+            Possibly the best boulangerie in Paris. Their
+            <em>escargot pistache</em> pastry is life-changing. Worth the metro
+            ride. Lines move fast.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Berthillon</div>
+          <div class="rtype">Ice Cream · Île Saint-Louis</div>
+          <div class="rtip">
+            Legendary Parisian glacier. The salted caramel and wild strawberry
+            are non-negotiable. Get two scoops — regret nothing.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Any neighborhood bistro</div>
+          <div class="rtype">French · Everywhere</div>
+          <div class="rtip">
+            Look for a chalkboard menu (ardoise), a terrace, and locals eating
+            inside. Avoid any place with a photo menu or a host trying to pull
+            you in from the street.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Rue Mouffetard</div>
+          <div class="rtype">Market Street · 5th arr.</div>
+          <div class="rtip">
+            One of the oldest market streets in Paris. Cheese, charcuterie,
+            olives, fresh bread — build a picnic for the Jardin des Plantes. The
+            girls will love choosing things.
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.1em; color: var(--navy); margin: 20px 0 12px">
+        🥘 Barcelona
+      </h3>
+      <div class="resto-grid">
+        <div class="resto">
+          <div class="rname">Tapas 24</div>
+          <div class="rtype">Tapas · Eixample (near your Airbnb)</div>
+          <div class="rtip">
+            Chef Carles Abellan's casual tapas bar — walking distance from
+            Diagonal 377. The bikini sandwich (ham + truffle) and croquetas are
+            iconic. Expect a queue — worth it.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Cerveceria Catalana</div>
+          <div class="rtype">Tapas · Eixample (walking distance)</div>
+          <div class="rtip">
+            Brilliant montaditos (small open-faced bites) and fresh tapas. One
+            of Barcelona's most beloved neighborhood spots. Always packed — go
+            for lunch to avoid longest waits.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Cal Pep</div>
+          <div class="rtype">Seafood Tapas · El Born</div>
+          <div class="rtip">
+            Counter-only, fast-moving, exceptional. The clams, baby squid, and
+            garlicky beans are extraordinary. Dinner only. One of the best meals
+            you'll have in Barcelona.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Jai Ca</div>
+          <div class="rtype">Tapas · Barceloneta Beach</div>
+          <div class="rtip">
+            Right by the beach. Cash only, marble bar, chaotic and perfect.
+            Order the gambas, the croquetas, and the patatas bravas. The
+            quintessential Barceloneta lunch.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">Sartoria Panatieri</div>
+          <div class="rtype">Italian · Gràcia</div>
+          <div class="rtip">
+            Widely considered the best pizza in Barcelona. Slow-fermented
+            sourdough, incredible ingredients. Book ahead or arrive when they
+            open. Your Italian fix, sorted.
+          </div>
+        </div>
+        <div class="resto">
+          <div class="rname">La Pepita</div>
+          <div class="rtype">Italian/Creative · Eixample</div>
+          <div class="rtip">
+            Gorgeous, Instagram-famous interior but genuinely great food.
+            Sandwiches, pasta, and sharing plates. Great for lunch with the
+            girls — fun atmosphere, kid-friendly.
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ BUDGET OVERVIEW ═══ -->
+      <h2 class="sec-title" id="budget">💰 Budget Overview</h2>
+      <p class="sec-sub">
+        Confirmed costs from your bookings + estimated remaining spend
+      </p>
+
+      <div style="overflow-x: auto">
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Confirmed</th>
+              <th>Estimated Remaining</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>✈️ Flights (4 pax — Delta G9BB2X)</td>
+              <td>$5,151.72</td>
+              <td>—</td>
+              <td>$5,151.72</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMS4SWE2D5" target="_blank" rel="noopener">🏠 Paris Airbnb (HMS4SWE2D5, 5 nights)</a></td>
+              <td>$2,757.34</td>
+              <td>—</td>
+              <td>$2,757.34</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.airbnb.com/trips/v1/reservation-details/ro/RESERVATION2_CHECKIN/HMX9ER8FEP" target="_blank" rel="noopener">🏠 Barcelona Airbnb (HMX9ER8FEP, 5 nights)</a></td>
+              <td>$3,194.75</td>
+              <td>—</td>
+              <td>$3,194.75</td>
+            </tr>
+            <tr>
+              <td>🚆 TGV Paris→Barcelona (8K9GR2, 6 pax)</td>
+              <td>$708.40</td>
+              <td>—</td>
+              <td>$708.40</td>
+            </tr>
+            <tr>
+              <td>🎡 Sagrada Família tickets</td>
+              <td>$195.00</td>
+              <td>—</td>
+              <td>$195.00</td>
+            </tr>
+            <tr>
+              <td>🚇 Local transit (Paris + Barcelona)</td>
+              <td>—</td>
+              <td>$330.00</td>
+              <td>$330.00</td>
+            </tr>
+            <tr>
+              <td>🎠 Disneyland Paris (2-day, 4 pax)</td>
+              <td>—</td>
+              <td>$920.00</td>
+              <td>$920.00</td>
+            </tr>
+            <tr>
+              <td>🏛️ Versailles entry (2 adults, kids free)</td>
+              <td>—</td>
+              <td>$50.00</td>
+              <td>$50.00</td>
+            </tr>
+            <tr>
+              <td>🎡 Tibidabo (family of 4)</td>
+              <td>—</td>
+              <td>$155.00</td>
+              <td>$155.00</td>
+            </tr>
+            <tr>
+              <td>🌄 Montjuic + cable car</td>
+              <td>—</td>
+              <td>$65.00</td>
+              <td>$65.00</td>
+            </tr>
+            <tr>
+              <td>🌿 Park Güell timed entry</td>
+              <td>—</td>
+              <td>$45.00</td>
+              <td>$45.00</td>
+            </tr>
+            <tr>
+              <td>🍽️ Food — Paris (6 days × $150/day)</td>
+              <td>—</td>
+              <td>$900.00</td>
+              <td>$900.00</td>
+            </tr>
+            <tr>
+              <td>🍽️ Food — Barcelona (5 days × $150/day)</td>
+              <td>—</td>
+              <td>$750.00</td>
+              <td>$750.00</td>
+            </tr>
+            <tr>
+              <td>🛍️ Insurance, SIM, souvenirs, buffer</td>
+              <td>—</td>
+              <td>$1,025.00</td>
+              <td>$1,025.00</td>
+            </tr>
+            <tr class="total">
+              <td>Confirmed Total</td>
+              <td><strong>$12,007.21</strong></td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr class="total">
+              <td>Estimated Remaining</td>
+              <td>—</td>
+              <td><strong>$4,240.00</strong></td>
+              <td></td>
+            </tr>
+            <tr class="grand">
+              <td><strong>GRAND TOTAL (estimated)</strong></td>
+              <td></td>
+              <td></td>
+              <td><strong>~$16,247</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 0.8em; color: var(--muted); margin-top: 8px">
+        * Flight total assumes all 4 tickets at Jonathan's confirmed rate of
+        $1,287.93. Children's fares may differ. Magic Fountains = FREE (not
+        listed). Eiffel Tower + small attractions included in food/misc budget.
+      </p>
+    </main>
+
+    <footer>
+      <div class="em">🗼 🇫🇷 🚄 🇪🇸 🏖️</div>
+      <p>Creamer Family · Paris + Barcelona · June 1–12, 2026</p>
+      <p style="margin-top: 6px; opacity: 0.55">
+        Jonathan, Lynnsey, Hadley &amp; Everly · Built with Copilot · May 2026
+      </p>
+    </footer>
+
+    <script>
+      // Active nav on scroll
+      const titles = document.querySelectorAll(".sec-title");
+      const links = document.querySelectorAll(".nav a");
+      const obs = new IntersectionObserver(
+        (e) => {
+          e.forEach((en) => {
+            if (en.isIntersecting) {
+              links.forEach((l) => l.classList.remove("active"));
+              const a = document.querySelector(
+                `.nav a[href="#${en.target.id}"]`,
+              );
+              if (a) a.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-70px 0px -60% 0px" },
+      );
+      titles.forEach((t) => obs.observe(t));
+      // smooth scroll
+      links.forEach((a) =>
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) t.scrollIntoView({ behavior: "smooth" });
+        }),
+      );
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./service-worker.js");
+        });
+      }
+      const offlineBanner = document.querySelector(".offline-banner");
+      const updateConnectionStatus = () => {
+        offlineBanner.classList.toggle("show", !navigator.onLine);
+      };
+
+      updateConnectionStatus();
+      window.addEventListener("online", updateConnectionStatus);
+      window.addEventListener("offline", updateConnectionStatus);
+    </script>
+  </body>
+</html>
