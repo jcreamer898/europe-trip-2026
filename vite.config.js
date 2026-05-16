@@ -25,6 +25,16 @@ export default defineConfig({
             src: "assets/icon.svg",
             sizes: "any",
             type: "image/svg+xml",
+          },
+          {
+            src: "assets/icon-180.png",
+            sizes: "180x180",
+            type: "image/png",
+          },
+          {
+            src: "assets/icon-512.png",
+            sizes: "512x512",
+            type: "image/png",
             purpose: "any maskable",
           },
         ],
