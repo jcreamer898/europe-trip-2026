@@ -16,6 +16,7 @@
   import { bookings, trainWarning } from "./lib/data/bookings.js";
   import { sections } from "./lib/data/itinerary.js";
   import { parisRestaurants, barcelonaRestaurants } from "./lib/data/restaurants.js";
+  import { parisBars, barcelonaBars } from "./lib/data/bars.js";
   import { budgetItems, budgetTotals, budgetNote } from "./lib/data/budget.js";
 </script>
 
@@ -80,6 +81,16 @@
 
   <h3 class="food-heading">🥘 Barcelona</h3>
   <RestaurantGrid restaurants={barcelonaRestaurants} />
+
+  <!-- Bars -->
+  <h2 class="sec-title" id="bars">🍸 Bar Guide</h2>
+  <p class="sec-sub">Top bars in Paris and Barcelona — cocktails, classics, and hidden gems</p>
+
+  <h3 class="food-heading">🥂 Paris</h3>
+  <RestaurantGrid restaurants={parisBars} />
+
+  <h3 class="food-heading">🍹 Barcelona</h3>
+  <RestaurantGrid restaurants={barcelonaBars} />
 
   <!-- Budget -->
   <h2 class="sec-title" id="budget">💰 Budget Overview</h2>

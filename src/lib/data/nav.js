@@ -6,5 +6,6 @@ export const navItems = [
   { href: "#train", label: "The Train" },
   { href: "#barcelona", label: "Barcelona" },
   { href: "#food", label: "Food Guide" },
+  { href: "#bars", label: "Bars" },
   { href: "#budget", label: "Budget" }
 ];
