@@ -246,34 +246,17 @@ export const barcelonaDays = [
   {
     day: 7,
     title: "Day 7 — Monday, June 8",
-    tag: "Sagrada Família · El Born · Ciutadella Park",
+    tag: "El Born · Ciutadella Park · Sagrada Família",
     theme: "bcn",
     blocks: [
-      { type: "heading", text: "Morning: Sagrada Família" },
-      {
-        type: "list",
-        items: [
-          "Tickets already booked ✅ — arrive at your timed slot, don't be late",
-          "Towers included — take the Nativity Tower for sunrise views over the city",
-          "Gaudí designed this to take 200 years to build; it's still ongoing and stunning",
-          "Spend 2-2.5 hours minimum — the interior light through the stained glass is extraordinary"
-        ]
-      },
-      {
-        type: "callout",
-        variant: "yellow",
-        title: "💡 Gaudí Centenary — June 10",
-        text: "June 10, 2026 is the <strong>100th anniversary of Antoni Gaudí's death</strong>. You'll be in Barcelona for one of the most significant cultural events in the city's recent history. Expect special events, exhibitions, and massive crowds at all Gaudí sites. Book Park Güell timed entry NOW."
-      },
-      { type: "heading", text: "Afternoon: El Born + Ciutadella Park" },
+      { type: "heading", text: "Morning & Afternoon: El Born + Ciutadella Park" },
       {
         type: "list",
         items: [
           "<strong>Mercat de Santa Caterina</strong> — colorful mosaic roof, beautiful market, less touristy than Boqueria",
           "Wander <strong>El Born</strong> neighborhood — boutiques, coffee, the best tapas bars",
           "<strong>Parc de la Ciutadella</strong> — Barcelona's central park, right next to El Born. Rowboats on the lake (~€6/30 min), grand fountain (Cascada), playground, and wide paths for the girls to run around",
-          "<strong>Basílica de Santa Maria del Mar</strong> — stunning Gothic church, free entry",
-          "Evening pintxos crawl in El Born"
+          "<strong>Basílica de Santa Maria del Mar</strong> — stunning Gothic church, free entry"
         ]
       },
       {
@@ -281,6 +264,30 @@ export const barcelonaDays = [
         variant: "blue",
         title: "🚇 Barcelona Metro",
         text: "Get a <strong>T-Casual card</strong> (10 trips, ~€11.35, shareable). Kids under 4 free. Sagrada Família = stop \"Sagrada Família\" on L2/L5."
+      },
+      {
+        type: "callout",
+        variant: "yellow",
+        title: "💡 Gaudí Centenary — June 10",
+        text: "June 10, 2026 is the <strong>100th anniversary of Antoni Gaudí's death</strong>. You'll be in Barcelona for one of the most significant cultural events in the city's recent history. Expect special events, exhibitions, and massive crowds at all Gaudí sites."
+      },
+      { type: "heading", text: "Late Afternoon: Sagrada Família — 5:45 PM Entry" },
+      {
+        type: "list",
+        items: [
+          "Timed entry: <strong>17:45 on June 8</strong> — don't be late, they're strict on slots",
+          "Towers included — take the Nativity Tower for golden-hour views over the city",
+          "The late afternoon light through the stained glass is extraordinary — warm reds and oranges on the west side",
+          "Gaudí designed this to take 200 years to build; it's still ongoing and stunning",
+          "Spend 2-2.5 hours — you'll be out by ~8 PM, perfect for dinner"
+        ]
+      },
+      { type: "heading", text: "Evening: Pintxos in El Born" },
+      {
+        type: "list",
+        items: [
+          "Head back to El Born (~15 min metro) for a pintxos crawl — you already know the neighborhood from this morning"
+        ]
       },
       {
         type: "callout",
