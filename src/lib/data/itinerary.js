@@ -246,7 +246,7 @@ export const barcelonaDays = [
   {
     day: 7,
     title: "Day 7 — Monday, June 8",
-    tag: "Sagrada Família · El Born",
+    tag: "Sagrada Família · El Born · Ciutadella Park",
     theme: "bcn",
     blocks: [
       { type: "heading", text: "Morning: Sagrada Família" },
@@ -265,12 +265,13 @@ export const barcelonaDays = [
         title: "💡 Gaudí Centenary — June 10",
         text: "June 10, 2026 is the <strong>100th anniversary of Antoni Gaudí's death</strong>. You'll be in Barcelona for one of the most significant cultural events in the city's recent history. Expect special events, exhibitions, and massive crowds at all Gaudí sites. Book Park Güell timed entry NOW."
       },
-      { type: "heading", text: "Afternoon: El Born + Gothic Quarter" },
+      { type: "heading", text: "Afternoon: El Born + Ciutadella Park" },
       {
         type: "list",
         items: [
           "<strong>Mercat de Santa Caterina</strong> — colorful mosaic roof, beautiful market, less touristy than Boqueria",
           "Wander <strong>El Born</strong> neighborhood — boutiques, coffee, the best tapas bars",
+          "<strong>Parc de la Ciutadella</strong> — Barcelona's central park, right next to El Born. Rowboats on the lake (~€6/30 min), grand fountain (Cascada), playground, and wide paths for the girls to run around",
           "<strong>Basílica de Santa Maria del Mar</strong> — stunning Gothic church, free entry",
           "Evening pintxos crawl in El Born"
         ]
@@ -364,10 +365,21 @@ export const barcelonaDays = [
   {
     day: 10,
     title: "Day 10 — Thursday, June 11",
-    tag: "Barceloneta Beach · Montjuic · Magic Fountains ✨",
+    tag: "La Boqueria · Barceloneta Beach · Montjuic · Magic Fountains ✨",
     theme: "bcn",
     blocks: [
-      { type: "heading", text: "Morning & Afternoon: Barceloneta Beach 🏖️" },
+      { type: "heading", text: "Morning: La Boqueria Market 🍓" },
+      {
+        type: "list",
+        items: [
+          "<strong>Mercat de la Boqueria</strong> on La Rambla — Barcelona's most famous food market",
+          "Go early (before 10 AM) for the best experience — less crowded, freshest produce",
+          "Fresh fruit cups, jamón ibérico, fresh juice, pastries — breakfast here is unbeatable",
+          "The girls will love the colors — walls of candy, tropical fruit towers, enormous seafood displays",
+          "Pick up beach snacks: fruit, nuts, olives, cured meats for later"
+        ]
+      },
+      { type: "heading", text: "Late Morning & Afternoon: Barceloneta Beach 🏖️" },
       {
         type: "list",
         items: [
