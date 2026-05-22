@@ -280,13 +280,19 @@ export const barcelonaDays = [
         variant: "blue",
         title: "🚇 Barcelona Metro",
         text: "Get a <strong>T-Casual card</strong> (10 trips, ~€11.35, shareable). Kids under 4 free. Sagrada Família = stop \"Sagrada Família\" on L2/L5."
+      },
+      {
+        type: "callout",
+        variant: "purple",
+        title: "🍸 Late Night: Two Schmucks (after girls are asleep)",
+        text: "Your second adults-only night out. <strong>Two Schmucks</strong> in Eixample — irreverent, punk-attitude cocktail bar ranked in the World's 50 Best. Brilliant drinks, great value, no reservations needed. ~10 min taxi from El Born."
       }
     ]
   },
   {
     day: 8,
     title: "Day 8 — Tuesday, June 9",
-    tag: "Tibidabo · Bunkers del Carmel",
+    tag: "Tibidabo · Gràcia · Paradiso 🍸",
     theme: "bcn",
     blocks: [
       { type: "heading", text: "Morning: Tibidabo Amusement Park" },
@@ -306,22 +312,28 @@ export const barcelonaDays = [
         title: "🛝 Tibidabo = Giant Playground",
         text: "This is essentially an amusement park on a mountaintop. The girls are going to think it's the coolest thing they've ever seen. Budget 4-5 hours."
       },
-      { type: "heading", text: "Evening: Bunkers del Carmel" },
+      { type: "heading", text: "Evening: Dinner in Gràcia" },
       {
         type: "list",
         items: [
-          "Anti-aircraft bunkers from the Civil War era, now Barcelona's best free viewpoint",
-          "360° panoramic views of the entire city, sea, and mountains at sunset",
-          "Bring a picnic — locals come here at dusk with wine and snacks",
-          "~20 min taxi from Tibidabo or metro to El Carmel + short hike"
+          "FGC down from Tibidabo drops you right into <strong>Gràcia</strong> — bohemian neighborhood with a village feel",
+          "Stroll <strong>Plaça del Sol</strong> and <strong>Plaça de la Virreina</strong> — locals gather here at dusk, kids run around",
+          "Tapas dinner at a terrace — tons of options along Carrer de Verdi and the plazas",
+          "Gelato stop before heading back — the girls earned it after a full day"
         ]
+      },
+      {
+        type: "callout",
+        variant: "purple",
+        title: "🍸 Late Night: Paradiso (after girls are asleep)",
+        text: "Once the grandparents are on duty, head to <strong>Paradiso</strong> in El Born (~15 min by metro). Enter through a hidden door inside a pastrami sandwich shop. World's Best Bar 2022 — theatrical, inventive cocktails. <strong>Book a table in advance</strong> — the queue gets long. Worth every minute."
       }
     ]
   },
   {
     day: 9,
     title: "Day 9 — Wednesday, June 10 🎉",
-    tag: "GAUDÍ CENTENARY · Park Güell · Beach",
+    tag: "GAUDÍ CENTENARY · Sitges Day Trip",
     theme: "gaudi",
     blocks: [
       {
@@ -330,17 +342,32 @@ export const barcelonaDays = [
         title: "🎉 June 10, 2026 — 100th Anniversary of Gaudí's Death",
         text: "This is a massive cultural milestone for Barcelona. Expect special exhibitions, free entry periods, live music, and city-wide events. Check visitbarcelona.com for the official program. Your Sagrada Família visit was yesterday — perfect timing."
       },
-      { type: "heading", text: "Morning: Park Güell" },
+      { type: "heading", text: "Sitges Day Trip 🏖️" },
+      {
+        type: "callout",
+        variant: "blue",
+        title: "🚆 Train: Barcelona Sants → Sitges (~35 min, ~€4.50/person)",
+        text: "Sitges is a gorgeous whitewashed beach town 35km southwest of Barcelona. Quieter than Barceloneta, beautiful old town, clear water. Great day trip especially with kids. Trains run every 20-30 minutes."
+      },
       {
         type: "list",
         items: [
-          "Book timed entry in advance at parkguell.barcelona (~€10/adult, Everly may be free under 7)",
-          "Gaudí's mosaic terrace, gingerbread gatehouses, and forested walking paths",
-          "Go early — it will be extra crowded today given the centenary",
-          "The Monumental Zone is ticketed; the surrounding park is free and worth exploring"
+          "Church of Sant Bartomeu overlooking the sea — iconic photo spot",
+          "Long sandy beach — calmer, cleaner, and less crowded than Barceloneta",
+          "Great seafood restaurants on the promenade — paella for lunch",
+          "Wander the old town streets — boutiques, ice cream, churros",
+          "Head back to Barcelona in the late afternoon — catch centenary events in the evening if anything catches your eye"
         ]
-      },
-      { type: "heading", text: "Afternoon: Barceloneta Beach Day 🏖️" },
+      }
+    ]
+  },
+  {
+    day: 10,
+    title: "Day 10 — Thursday, June 11",
+    tag: "Barceloneta Beach · Montjuic · Magic Fountains ✨",
+    theme: "bcn",
+    blocks: [
+      { type: "heading", text: "Morning & Afternoon: Barceloneta Beach 🏖️" },
       {
         type: "list",
         items: [
@@ -355,59 +382,22 @@ export const barcelonaDays = [
         variant: "blue",
         title: "🍽️ Beach Lunch: Jai Ca",
         text: "Classic Barceloneta tavern right by the beach. Order the gambas al ajillo (garlic prawns), patatas bravas, and croquetas. Very local, very good. Cash preferred."
-      }
-    ]
-  },
-  {
-    day: 10,
-    title: "Day 10 — Thursday, June 11",
-    tag: "Montjuic · Magic Fountains · or Sitges",
-    theme: "bcn",
-    blocks: [
+      },
+      { type: "heading", text: "Late Afternoon: Montjuic Cable Cars 🚡" },
       {
-        type: "options",
-        options: [
-          {
-            title: "Option A: Montjuic Day + Magic Fountains Evening",
-            blocks: [
-              {
-                type: "list",
-                items: [
-                  "<strong>Montjuic Cable Car</strong> (Teleféric de Montjuïc) — sweeping views over the port (~€15/person round trip)",
-                  "<strong>Castell de Montjuïc</strong> — old fortress at the summit, great views, free entry to grounds",
-                  "<strong>Fundació Joan Miró</strong> — world-class modern art museum on Montjuic (~€15/adult)",
-                  "<strong>Olympic Stadium</strong> — free to walk around, nice views"
-                ]
-              },
-              {
-                type: "callout",
-                variant: "green",
-                title: "⛲ Magic Fountains of Montjuic — FREE",
-                text: "June–September: Thursday–Sunday evenings, ~9:30–10:30 PM. Spectacular water, light, and music show at the foot of Montjuic. End your Montjuic day here — sit on the steps of the MNAC with the city glittering behind you."
-              }
-            ]
-          },
-          {
-            title: "Option B: Sitges Day Trip 🏖️",
-            blocks: [
-              {
-                type: "callout",
-                variant: "blue",
-                title: "🚆 Train: Barcelona Sants → Sitges (~35 min, ~€4.50/person)",
-                text: "Sitges is a gorgeous whitewashed beach town 35km southwest of Barcelona. Quieter than Barceloneta, beautiful old town, clear water. Great day trip especially with kids. Trains run every 20-30 minutes."
-              },
-              {
-                type: "list",
-                items: [
-                  "Church of Sant Bartomeu overlooking the sea — iconic photo spot",
-                  "Long sandy beach — calmer, cleaner, and less crowded than Barceloneta",
-                  "Great seafood restaurants on the promenade — paella for lunch",
-                  "Wander the old town streets — boutiques, ice cream, churros"
-                ]
-              }
-            ]
-          }
+        type: "list",
+        items: [
+          "<strong>Montjuic Cable Car</strong> (Teleféric de Montjuïc) — sweeping views over the port (~€15/person round trip)",
+          "<strong>Castell de Montjuïc</strong> — old fortress at the summit, great views, free entry to grounds",
+          "Walk down through the gardens toward the Magic Fountains — beautiful at sunset"
         ]
+      },
+      { type: "heading", text: "Evening: Magic Fountains ⛲" },
+      {
+        type: "callout",
+        variant: "green",
+        title: "⛲ Magic Fountains of Montjuic — FREE",
+        text: "June–September: Thursday–Sunday evenings, ~9:30–10:30 PM. Spectacular water, light, and music show at the foot of Montjuic. The perfect grand finale to your Barcelona trip — sit on the steps of the MNAC with the city glittering behind you."
       }
     ]
   },
