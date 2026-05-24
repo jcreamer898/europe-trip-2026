@@ -25,15 +25,36 @@ export const parisDays = [
           "Stock up at the nearby Monoprix for breakfast supplies"
         ]
       },
-      { type: "heading", text: "Evening — Eiffel Tower + Champs-Élysées" },
+      { type: "heading", text: "Mid-Afternoon — Galeries Lafayette + Lunch" },
+      {
+        type: "callout",
+        variant: "blue",
+        title: "🛍️ <a href=\"https://maps.app.goo.gl/yH1G84trLiLFfKtU9\" target=\"_blank\" rel=\"noopener\">Galeries Lafayette Haussmann</a>",
+        text: "Take the metro to Chaussée d'Antin–La Fayette (lines 7 & 9). Marvel at the iconic Art Nouveau stained-glass dome, browse the gourmet food hall for picnic supplies, and let the girls soak in the grand department store experience."
+      },
       {
         type: "list",
         items: [
-          "Metro to <strong>Trocadéro</strong> for the best Eiffel Tower view (across the water)",
-          "Walk over to the tower — tick the summit or just enjoy it lit up at dusk",
-          "Stroll the <strong>Champs-Élysées</strong> east toward the Arc de Triomphe",
-          "Dinner near the tower or back in the neighborhood — keep it easy, you're jet-lagged"
+          "Lunch in the Haussmann/Opéra area — <strong>Bouillon Chartier</strong> (classic brasserie, great value) or grab a bite in the Galeries Lafayette food hall",
+          "Pick up cheese, charcuterie, wine, and a baguette from the <strong>Galeries Lafayette Gourmet</strong> basement for the evening picnic",
+          "Browse the perfume and fashion floors — the dome alone is worth the trip"
         ]
+      },
+      { type: "heading", text: "Evening — Cheese & Wine Picnic at the Eiffel Tower" },
+      {
+        type: "list",
+        items: [
+          "Metro to <strong>Trocadéro</strong> for the iconic Eiffel Tower view across the Seine",
+          "Cross over and spread out on the <strong>Champ de Mars</strong> lawn for a proper French picnic — cheese, wine, baguette, the works",
+          "Watch the tower light up gold at sunset, then sparkle on the hour after dark",
+          "The girls can run on the Champ de Mars while you settle in — perfect way to shake off jet lag"
+        ]
+      },
+      {
+        type: "callout",
+        variant: "green",
+        title: "🧀 Picnic Tips",
+        text: "Grab a blanket from the flat. Best cheeses to look for: Comté, Brie de Meaux, and a fresh chèvre. Pair with a Côtes du Rhône or a light Burgundy. The Champ de Mars is right at the base of the tower — stake out a spot facing it before the sun sets."
       },
       {
         type: "callout",
