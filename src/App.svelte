@@ -8,6 +8,7 @@
   import SectionImage from "./lib/components/SectionImage.svelte";
   import RestaurantGrid from "./lib/components/RestaurantGrid.svelte";
   import BudgetTable from "./lib/components/BudgetTable.svelte";
+  import LanguageGuide from "./lib/components/LanguageGuide.svelte";
   import Footer from "./lib/components/Footer.svelte";
   import OfflineBanner from "./lib/components/OfflineBanner.svelte";
 
@@ -18,6 +19,7 @@
   import { parisRestaurants, barcelonaRestaurants } from "./lib/data/restaurants.js";
   import { parisBars, barcelonaBars } from "./lib/data/bars.js";
   import { budgetItems, budgetTotals, budgetNote } from "./lib/data/budget.js";
+  import { languageGuides } from "./lib/data/language-guide.js";
 </script>
 
 <OfflineBanner />
@@ -96,6 +98,11 @@
   <h2 class="sec-title" id="budget">💰 Budget Overview</h2>
   <p class="sec-sub">Confirmed costs from your bookings + estimated remaining spend</p>
   <BudgetTable items={budgetItems} totals={budgetTotals} note={budgetNote} />
+
+  <!-- Language Guide -->
+  <h2 class="sec-title" id="language">🗣️ French + Spanish Cheat Sheet</h2>
+  <p class="sec-sub">Quick phrases for restaurants, bakeries, cafés, restrooms, and getting around</p>
+  <LanguageGuide guides={languageGuides} />
 </main>
 
 <Footer />
