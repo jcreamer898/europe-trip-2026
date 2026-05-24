@@ -55,6 +55,12 @@ export const parisDays = [
         variant: "green",
         title: "🧀 Picnic Tips",
         text: "Grab a blanket from the flat. Best cheeses to look for: Comté, Brie de Meaux, and a fresh chèvre. Pair with a Côtes du Rhône or a light Burgundy. The Champ de Mars is right at the base of the tower — stake out a spot facing it before the sun sets."
+      },
+      {
+        type: "callout",
+        variant: "green",
+        title: "🛝 Playground: Champ de Mars",
+        text: "Right at the base of the Eiffel Tower. Great equipment, soft-surface ground. The girls can run off the plane energy while you watch the tower turn gold at sunset."
       }
     ]
   }
