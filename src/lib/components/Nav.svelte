@@ -1,40 +1,9 @@
 <script>
-  let { items = [] } = $props();
-  let activeHref = $state("");
+  let { items = [], activePage = "home" } = $props();
 
-  $effect(() => {
-    if (typeof document === "undefined" || typeof IntersectionObserver === "undefined") {
-      return;
-    }
-
-    const sections = items
-      .map((item) => document.querySelector(item.href))
-      .filter(Boolean);
-
-    if (!sections.length) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            activeHref = `#${entry.target.id}`;
-          }
-        });
-      },
-      { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  });
-
-  function handleClick(event, href) {
-    event.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    activeHref = href;
+  function isActive(item) {
+    const route = item.href.replace(/^#\//, "");
+    return route === activePage;
   }
 </script>
 
@@ -43,9 +12,8 @@
     {#each items as item}
       <a
         href={item.href}
-        class:active={activeHref === item.href}
-        aria-current={activeHref === item.href ? "page" : undefined}
-        onclick={(event) => handleClick(event, item.href)}
+        class:active={isActive(item)}
+        aria-current={isActive(item) ? "page" : undefined}
       >
         {item.label}
       </a>

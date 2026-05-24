@@ -1,12 +1,6 @@
 export const navItems = [
-  { href: "#bookings", label: "Bookings" },
-  { href: "#paris", label: "Paris" },
-  { href: "#disney", label: "Disney" },
-  { href: "#versailles", label: "Versailles" },
-  { href: "#train", label: "The Train" },
-  { href: "#barcelona", label: "Barcelona" },
-  { href: "#food", label: "Food Guide" },
-  { href: "#bars", label: "Bars" },
-  { href: "#budget", label: "Budget" },
-  { href: "#language", label: "Phrases" }
+  { href: "#/home", label: "Overview" },
+  { href: "#/itinerary", label: "Itinerary" },
+  { href: "#/food", label: "Food & Bars" },
+  { href: "#/language", label: "Language Guide" }
 ];
