@@ -2,8 +2,10 @@
   import BookingGrid from "../components/BookingGrid.svelte";
   import WarningBanner from "../components/WarningBanner.svelte";
   import BudgetTable from "../components/BudgetTable.svelte";
+  import PackingList from "../components/PackingList.svelte";
   import { bookings, trainWarning } from "../data/bookings.js";
   import { budgetItems, budgetTotals, budgetNote } from "../data/budget.js";
+  import { packingCategories } from "../data/packing.js";
 </script>
 
 <main class="wrap">
@@ -16,6 +18,10 @@
   <h2 class="sec-title" id="budget">💰 Budget Overview</h2>
   <p class="sec-sub">Confirmed costs from your bookings + estimated remaining spend</p>
   <BudgetTable items={budgetItems} totals={budgetTotals} note={budgetNote} />
+
+  <h2 class="sec-title" id="packing">🧳 Packing List</h2>
+  <p class="sec-sub">Check items off as you pack — progress is saved in your browser</p>
+  <PackingList categories={packingCategories} />
 </main>
 
 <style>
