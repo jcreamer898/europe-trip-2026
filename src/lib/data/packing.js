@@ -50,6 +50,7 @@ export const packingCategories = [
     label: "🧴 Toiletries & Health",
     items: [
       { id: "toothbrush", label: "Toothbrush & toothpaste" },
+      { id: "hairbrush", label: "Hairbrush" },
       { id: "deodorant", label: "Deodorant" },
       { id: "sunscreen", label: "Sunscreen (SPF 30+)" },
       { id: "hand-sanitizer", label: "Hand sanitizer" },
