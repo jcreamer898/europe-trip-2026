@@ -56,7 +56,8 @@ export const packingCategories = [
       { id: "hand-sanitizer", label: "Hand sanitizer" },
       { id: "medications", label: "Prescription medications" },
       { id: "otc-meds", label: "OTC meds (pain relief, antacids, antihistamine)" },
-      { id: "first-aid", label: "Small first-aid kit / plasters" }
+      { id: "first-aid", label: "Small first-aid kit / plasters" },
+      { id: "pills", label: "Lynnsey's Meds" }
     ]
   },
   {
