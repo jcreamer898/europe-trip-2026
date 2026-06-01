@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { VitePWA } from "vite-plugin-pwa";
 
+const basePath = "/europe-trip-2026/";
+
 export default defineConfig({
   plugins: [
     svelte(),
@@ -15,8 +17,8 @@ export default defineConfig({
         short_name: "Europe 2026",
         description:
           "Offline-ready itinerary for the Creamer family trip to Paris and Barcelona.",
-        start_url: ".",
-        scope: ".",
+        start_url: basePath,
+        scope: basePath,
         display: "standalone",
         background_color: "#f8fafc",
         theme_color: "#1b2a4a",
@@ -41,5 +43,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/europe-trip-2026/",
+  base: basePath,
 });
